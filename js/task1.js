@@ -23,22 +23,35 @@
 
 // findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk']);
 
-function findAverage(array) {
-	let average = 0;
-	// your code here
-	for (const arr of array) {
-		average += arr;
-	}
-	if (array === undefined) {
-		average = 0;
-	} else {
-		average /= array.length;
-	}
+// function findAverage(array) {
+// 	let average = 0;
+// 	// your code here
+// 	for (const arr of array) {
+// 		average += arr;
+// 		// console.log(average);
+// 	}
 
-	return average;
-}
+// 	switch (array) {
+// 		case undefined:
+// 			average = 0;
+// 			break;
+// 		case true:
+// 			average /= array.length;
+// 			break;
+// 	}
+// 	// average /= array.length;
+// 	// average = array === undefined ? 0 : (average /= array.length);
+// 	// if (array === undefined) {
+// 	// 	console.log(average);
+// 	// 	average = 0;
+// 	// }
 
-console.log(findAverage([1, 1, 1]));
-console.log(findAverage([1, 2, 3]));
-console.log(findAverage([1, 2, 3, 4]));
-console.log(findAverage([]));
+// 	return average;
+// }
+
+// console.log(findAverage([1, 1, 1]));
+// console.log(findAverage([1, 2, 3]));
+// console.log(findAverage([1, 2, 3, 4]));
+// console.log(findAverage([]));
+
+// const arrp = [];
