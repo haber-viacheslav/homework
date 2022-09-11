@@ -176,14 +176,37 @@
 
 // console.log('Our friends are: ' + listFriends);
 
-const friends = ['Alex', 'Kirillo', 'Sam', 'Erica', 'Denis', 'Kate'];
-let list = '';
+// const friends = ['Alex', 'Kirillo', 'Sam', 'Erica', 'Denis', 'Kate'];
+// let list = '';
 
-for (const friend of friends) {
-	list += friend + ', ';
-	// list += ',';
+// for (const friend of friends) {
+// 	list += friend + ', ';
+// 	// list += ',';
+// }
+
+// list = list.slice(0, list.length - 2);
+
+// console.log('Our friends are: ' + list + '.');
+
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+// // Change code below this line
+// const firstTwoEls = fruits.slice(0, 2);
+// const nonExtremeEls = fruits.slice(1, fruits.length - 1);
+// const lastThreeEls = fruits.slice(-3);
+
+// console.log(firstTwoEls);
+// console.log(nonExtremeEls);
+// console.log(lastThreeEls);
+
+function createArrayOfNumbers(min, max) {
+	let numbers = [];
+	// Change code below this line
+	for (let i = min; i < max; i += 1) {
+		numbers.push(i);
+	}
+	// Change code above this line
+	return numbers;
 }
 
-list = list.slice(0, list.length - 2);
-
-console.log('Our friends are: ' + list + '.');
+console.log(createArrayOfNumbers(5, 100));
