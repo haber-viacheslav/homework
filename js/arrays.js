@@ -199,14 +199,70 @@
 // console.log(nonExtremeEls);
 // console.log(lastThreeEls);
 
-function createArrayOfNumbers(min, max) {
-	let numbers = [];
-	// Change code below this line
-	for (let i = min; i < max; i += 1) {
-		numbers.push(i);
-	}
-	// Change code above this line
-	return numbers;
-}
+// function createArrayOfNumbers(min, max) {
+// 	let numbers = [];
+// 	// Change code below this line
+// 	for (let i = min; i < max; i += 1) {
+// 		numbers.push(i);
+// 	}
+// 	// Change code above this line
+// 	return numbers;
+// }
 
-console.log(createArrayOfNumbers(5, 100));
+// console.table(createArrayOfNumbers(5, 100));
+
+// function getCommonElements(array1, array2) {
+// 	// Change code below this line
+// 	let array3 = [];
+// 	for (let i = 0; i < array1.length; i += 1) {
+// 		if (array2.includes(array1[i])) {
+// 			array3.push(array1[i]);
+// 		}
+// 	}
+// 	return array3;
+// }
+
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+
+// function getEvenNumbers(start, end) {
+// 	// Change code below this line
+// 	let result = [];
+
+// 	for (let i = start; i <= end; i += 1) {
+// 		if (i % 2 === 0) {
+// 			result.push(i);
+// 		}
+// 	}
+
+// 	return result;
+
+// 	// Change code above this line
+// }
+//32
+// function includes(array, value) {
+// 	// Change code below this line
+// 	for (const arg of array) {
+// 		if (arg === value) {
+// 			return true;
+// 		}
+// 		// return false;
+// 	}
+// 	// Change code above this line
+// }
+
+// console.log(includes(['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn'], 'Jupiter'));
+
+// function checkStorage(available, ordered) {
+// 	// Change code below this line
+
+// 	if (ordered === 0) {
+// 		return 'Your order is empty!';
+// 	}
+// 	if (ordered > available) {
+// 		return 'Your order is too large, not enough goods in stock!';
+// 	}
+// 	return 'The order is accepted, our manager will contact you';
+// 	// Change code above this line
+// }
+
+// console.log(checkStorage(100, 50));

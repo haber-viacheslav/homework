@@ -12,9 +12,9 @@ for (const letter of letters) {
 	// 	invertedString += letter.toUpperCase();
 	// } else {
 	// 	console.log('Эта буква в верхнем регистре!!!! - ', letter);
-	// 	invertedString += letter.toLocaleLowerCase();
+	// 	invertedString += letter.toLowerCase();
 	// }
-	invertedString += letter === letter.toLowerCase() ? letter.toUpperCase() : letter.toLocaleLowerCase();
+	invertedString += letter === letter.toLowerCase() ? letter.toUpperCase() : letter.toLowerCase();
 }
 
-console.log('Inverted string ' + invertedString);
+console.log('Inverted string: ' + invertedString);
