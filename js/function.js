@@ -128,19 +128,22 @@
 // console.log(add(12, 332, 345, 555, 754, 34));
 // console.log(add(31, 28, 35, 11, 47));
 
-const filterNumbers = function (array, ...args) {
-	let array3 = [];
-	for (const arg of args) {
-		if (array.includes(arg)) {
-			array3.push(arg);
-		}
-	}
-	return array3;
-};
+// const filterNumbers = function (array, ...args) {
+// 	let array3 = [];
 
-console.log(filterNumbers([1, 3, 5], 1, 2, 3, 4, 5));
-console.log(filterNumbers([33, 72, 37, 11, 59, 51, 55, 56, 33], 8, 11, 55, 11, 15, 33));
-console.log(filterNumbers([32, 58, 55, 65, 77, 12], 3, 8, 16, 32, 58, 55, 65, 77, 12, 34));
+// 	for (const arg of args) {
+// 		if (array.includes(arg)) {
+// 			array3.push(arg);
+// 		}
+// 	}
+// 	return array3;
+// };
+
+// console.log(filterNumbers([1, 3, 5], 1, 2, 3, 4, 5));
+
+// console.log(filterNumbers([33, 72, 37, 11, 59, 51, 55, 56, 33], 8, 11, 55, 11, 15, 33));
+
+// console.log(filterNumbers([32, 58, 55, 65, 77, 12], 3, 8, 16, 32, 58, 55, 65, 77, 12, 34));
 
 console.log('hello World');
 //  function getCommonElements(array1, array2) {
