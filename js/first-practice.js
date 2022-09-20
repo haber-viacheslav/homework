@@ -78,13 +78,16 @@
 //иначе выводить строку "Неверный пароль!"
 
 // const userPassword = 'Я главный';
-// const question = prompt('Введите логин');
+// let question = prompt('Введите логин');
 
 // if (question === 'Админ') {
 // 	let password;
 // 	password = prompt('Введите пароль');
+
 // 	if (password === userPassword) {
 // 		alert('Здравствуйте!');
+// 	} else if (password === null) {
+// 		alert('Отменено');
 // 	} else {
 // 		alert('Неверный пароль!');
 // 	}
@@ -144,7 +147,7 @@
 // 	return total / args.length;
 // }
 
-// console.log(caclculateAverage(1, 4, 6, 7, 8, 5, 9, 115, 'sdfs'));
+// console.log(caclculateAverage(55, 66, 77, 8, 5, 9, 115, 'sdfs'));
 
 // const styles = ['Джаз', 'Блюз'];
 // styles.push('Рок-н-ролл');
@@ -153,3 +156,227 @@
 // styles.splice(0, 0, 'Рэп', 'Регги');
 
 // console.log(styles);
+
+// Область видимости
+
+// let b = 20;
+
+// if (true) {
+// 	let b = 50;
+
+// 	b = 30;
+
+// 	if (true) {
+// 		b = 10;
+
+// 		console.log(b);
+// 	}
+// 	console.log(b);
+// }
+// console.log(b);
+
+// let b = 20;
+
+// if (true) {
+// 	let b = 50;
+
+// 	b = 30;
+
+// 	if (true) {
+// 		let b = 5;
+
+// 		b = 10;
+
+// 		console.log(b);
+// 	}
+// 	console.log(b);
+// }
+// console.log(b);
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// let total = 0;
+// let average = 0;
+
+// for (const value of arr) {
+// 	console.log('значение элемента массива', value);
+// 	total += value;
+// }
+// console.log(total);
+
+// average = total / arr.length;
+
+// console.log(average);
+
+// function expression
+// fooExpression(1555); // не сработает....
+
+// const fooExpression = function (value) {
+// 	console.log(value);
+// };
+
+// fooExpression(1555);
+
+// // function declaration
+
+// fooDeclaration(444); // сработает....)))
+
+// function fooDeclaration(value) {
+// 	console.log(value);
+// }
+
+// fooDeclaration(1555);
+
+// Array.from and for of ..
+
+// function getSum() {
+// 	let result = 0;
+// 	console.log(arguments);
+// 	let newArray = Array.from(arguments);
+// 	console.log(newArray);
+// 	for (const arr of newArray) {
+// 		result += arr;
+// 	}
+
+// 	return result;
+// }
+
+// console.log(getSum(1, 5, 7, 9, 77, 4, 22, 55, 78));
+// console.log(getSum(1, 5, 7, 9, 27, 4, 31, 15, 18));
+
+// REST and for of ..
+
+// function getSum(...arguments) {
+// 	let result = 0;
+// 	for (const arg of arguments) {
+// 		result += arg;
+// 	}
+
+// 	return result;
+// }
+
+// console.log(getSum(1, 5, 7, 9, 77, 4, 22, 55, 78));
+// console.log(getSum(1, 5, 7, 9, 27, 4, 31, 15, 18));
+
+// FOR OF .. rest, Array.from
+
+// function getSum() {
+// 	const arr = Array.from(arguments);
+// 	const arr2 = [...arguments];
+// 	console.log(arr2);
+
+// 	let result = 0;
+// 	for (let i = 0; i < arr.length; i += 1) {
+// 		result += arr[i];
+// 	}
+
+// 	return result;
+// }
+
+// console.log(getSum(1, 5, 7, 9, 77, 4, 22, 55, 78));
+// console.log(getSum(1, 5, 7, 9, 27, 4, 31, 15, 18));
+
+// const string = 'Enjoy Your Favorite ';
+// function getStringlength() {
+// 	let strLength = 0;
+// 	let arrFromString = [];
+// 	arrFromString = string.split('');
+// 	for (const arg of arrFromString) {
+// 		if (arg !== ' ') {
+// 			strLength += 1;
+// 			continue;
+// 		}
+// 	}
+// 	return strLength;
+// }
+
+// console.log(getStringlength(string));
+
+// Стэк вызова функций
+
+// function foo() {
+// 	console.log('start foo');
+// }
+
+// function boo() {
+// 	console.log('start boo');
+// 	foo();
+// 	console.log('end boo');
+// }
+
+// function moo() {
+// 	console.log('start moo');
+// 	boo();
+// 	console.log('end moo');
+// }
+
+// foo();
+// boo();
+// moo();
+
+// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
+
+// function addCourse(name) {
+// 	if (courses.indexOf(name) === -1) {
+// 		courses.push(name);
+// 		return courses;
+// 	}
+// 	return console.log('У Вас уже есть этот курс');
+// }
+
+// addCourse('Express');
+// console.log(courses);
+// addCourse('CSS');
+// console.log(courses);
+
+// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'Node'];
+
+// console.log(courses);
+
+// function addCourse(name) {
+// 	if (!courses.includes(name)) {
+// 		courses.push(name);
+// 		return;
+// 	}
+// 	return 'У Вас уже есть этот курс';
+// }
+
+// function removeCourse(name) {
+// 	if (courses.includes(name)) {
+// 		let index = courses.indexOf(name);
+// 		courses.splice(index, 1);
+// 		return `Курс ${name} успешно удалён`;
+// 	}
+
+// 	return 'Курса с таким названием не найдено';
+// }
+
+// function updateCourse(oldName, newName) {
+// 	// console.time('foo');
+// 	if (courses.includes(oldName)) {
+// 		let idx = courses.indexOf(oldName);
+// 		courses.splice(idx, 1, newName);
+// 		// OR
+// 		// courses[idx] = newName;
+
+// 		return;
+// 	}
+// 	// console.timeEnd('foo');
+// 	return `Курс с названием ${oldName} не найден`;
+// }
+// let result = addCourse('CSS');
+// addCourse('Express');
+// console.log(courses);
+// console.log('result of add: ', result);
+
+// result = removeCourse('React');
+// console.log(result);
+// console.log(courses);
+// result = removeCourse('Vue');
+// console.log('result of delete: ', result);
+// console.log(courses);
+// updateCourse('Express', 'NextJS');
+
+// result = updateCourse('Angular', 'NestJS');
+// console.log(result);
+// console.log(courses);
