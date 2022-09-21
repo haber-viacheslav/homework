@@ -134,20 +134,20 @@
 //аргументов и возвращает их среднее значение.
 //Добавить проверку, что аргументы это числа.
 
-// function caclculateAverage(...args) {
-// 	let total = 0;
-// 	let numbers = 0;
-// 	for (const arg of args) {
-// 		if (typeof arg !== 'number') {
-// 			continue;
-// 		}
-// 		total += arg;
-// 		numbers += 1;
-// 	}
-// 	return total / args.length;
-// }
+function caclculateAverage(...args) {
+	let total = 0;
+	let numbers = 0;
+	for (const arg of args) {
+		if (typeof arg !== 'number') {
+			continue;
+		}
+		total += arg;
+		numbers += 1;
+	}
+	return total / numbers;
+}
 
-// console.log(caclculateAverage(55, 66, 77, 8, 5, 9, 115, 'sdfs'));
+console.log(caclculateAverage('sdfs', 55, 66, 77, 8, 5, 9, 115));
 
 // const styles = ['Джаз', 'Блюз'];
 // styles.push('Рок-н-ролл');

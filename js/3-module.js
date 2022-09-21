@@ -740,16 +740,16 @@
 //потому что только они есть в массиве первого аргумента.
 
 // Change code below this line
-function findMatches(array, ...numbers) {
-	const matches = []; // Don't change this line
-	for (const number of numbers) {
-		if (array.includes(number)) {
-			matches.push(number);
-		}
-	}
-	// Change code above this line
-	return matches;
-}
+// function findMatches(array, ...numbers) {
+// 	const matches = []; // Don't change this line
+// 	for (const number of numbers) {
+// 		if (array.includes(number)) {
+// 			matches.push(number);
+// 		}
+// 	}
+// 	// Change code above this line
+// 	return matches;
+// }
 
 // 34/41
 
@@ -866,39 +866,39 @@ function findMatches(array, ...numbers) {
 // Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и другими характеристиками.
 // Поэтому теперь в свойстве potions будет храниться массив объектов со следующими свойствами.
 
-const atTheOldToad = {
-	potions: [
-		{ name: 'Speed potion', price: 460 },
-		{ name: 'Dragon breath', price: 780 },
-		{ name: 'Stone skin', price: 520 },
-	],
-	// Change code below this line
-	getPotions() {
-		return this.potions;
-	},
-	addPotion(newPotion) {
-		for (const potion of this.potions) {
-			if (potion.name === newPotion.name) {
-				return `Error! Potion ${newPotion} is already in your inventory!`;
-			}
-		}
-		this.potions.push(newPotion);
-	},
-	removePotion(potionName) {
-		for (const potion of this.potions) {
-			if (potion.name !== potionName) {
-				return `Potion ${potionName} is not in inventory!`;
-			}
-			return this.potions.splice(this.potions.indexOf(potionName), 1);
-		}
-	},
-	updatePotionName(oldName, newName) {
-		for (const potion of this.potions) {
-			if (potion.name !== oldName) {
-				return `Potion ${oldName} is not in inventory!`;
-			}
-			this.potions.splice(this.potions.indexOf(oldName), 1, newName);
-		}
-	},
-	// Change code above this line
-};
+// const atTheOldToad = {
+// 	potions: [
+// 		{ name: 'Speed potion', price: 460 },
+// 		{ name: 'Dragon breath', price: 780 },
+// 		{ name: 'Stone skin', price: 520 },
+// 	],
+// 	// Change code below this line
+// 	getPotions() {
+// 		return this.potions;
+// 	},
+// 	addPotion(newPotion) {
+// 		for (const potion of this.potions) {
+// 			if (potion.name === newPotion.name) {
+// 				return `Error! Potion ${newPotion} is already in your inventory!`;
+// 			}
+// 		}
+// 		this.potions.push(newPotion);
+// 	},
+// 	removePotion(potionName) {
+// 		for (const potion of this.potions) {
+// 			if (potion.name !== potionName) {
+// 				return `Potion ${potionName} is not in inventory!`;
+// 			}
+// 			return this.potions.splice(this.potions.indexOf(potionName), 1);
+// 		}
+// 	},
+// 	updatePotionName(oldName, newName) {
+// 		for (const potion of this.potions) {
+// 			if (potion.name !== oldName) {
+// 				return `Potion ${oldName} is not in inventory!`;
+// 			}
+// 			this.potions.splice(this.potions.indexOf(oldName), 1, newName);
+// 		}
+// 	},
+// Change code above this line
+// };

@@ -145,7 +145,7 @@
 
 // console.log(filterNumbers([32, 58, 55, 65, 77, 12], 3, 8, 16, 32, 58, 55, 65, 77, 12, 34));
 
-console.log('hello World');
+// console.log('hello World');
 //  function getCommonElements(array1, array2) {
 // 	// Change code below this line
 // 	let array3 = [];
@@ -156,5 +156,3 @@ console.log('hello World');
 // 	}
 // 	return array3;
 // }
-
-
