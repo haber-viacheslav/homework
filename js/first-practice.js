@@ -134,20 +134,20 @@
 //аргументов и возвращает их среднее значение.
 //Добавить проверку, что аргументы это числа.
 
-function caclculateAverage(...args) {
-	let total = 0;
-	let numbers = 0;
-	for (const arg of args) {
-		if (typeof arg !== 'number') {
-			continue;
-		}
-		total += arg;
-		numbers += 1;
-	}
-	return total / numbers;
-}
+// function caclculateAverage(...args) {
+// 	let total = 0;
+// 	let numbers = 0;
+// 	for (const arg of args) {
+// 		if (typeof arg !== 'number') {
+// 			continue;
+// 		}
+// 		total += arg;
+// 		numbers += 1;
+// 	}
+// 	return total / numbers;
+// }
 
-console.log(caclculateAverage('sdfs', 55, 66, 77, 8, 5, 9, 115));
+// console.log(caclculateAverage('sdfs', 55, 66, 77, 8, 5, 9, 115));
 
 // const styles = ['Джаз', 'Блюз'];
 // styles.push('Рок-н-ролл');
@@ -380,3 +380,56 @@ console.log(caclculateAverage('sdfs', 55, 66, 77, 8, 5, 9, 115));
 // result = updateCourse('Angular', 'NestJS');
 // console.log(result);
 // console.log(courses);
+
+//  ТОП Задачка))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+//
+// Вам потрібно розрахувати суму чайових, яку потрібно дати в кафе
+// Робочий процес:
+
+//1. Контрольна сума введених користувачем даних.  (Use "prompt" function).
+//2. Відсоток чайових, введених користувачем.  (Use "prompt" function).
+//3. Для скасованого введення показати «Скасовано».
+//4. Вам потрібно перевірити вхідні дані: обидва значення мають бути числами,
+//контрольна сума не може бути від'ємним числом, відсоток не може бути від'ємним і перевищувати 100.
+//5. Якщо введені дані недійсні, ви повинні показати повідомлення «Недійсні вхідні дані». (Use "alert" function).
+//6. Вам потрібно розрахувати суму чайових і загальну суму до сплати.
+//7. Показати повідомлення: (приклад). (Use "alert" function).
+//
+//Чекова сума: 200
+//Порада: 15%
+//Сума чайових: 30
+//Загальна сума до оплати: 230 грн
+//
+//
+
+// const summ = prompt('Input check summ !');
+// const percentage = prompt('Input percentage !');
+// if (summ === null || percentage === null) {
+// 	alert('Canceled');
+// } else {
+// 	const parseSum = Number.parseFloat(summ);
+// 	const parsePercentage = Number.parseFloat(percentage);
+
+// 	console.log(parseSum);
+// 	console.log(parsePercentage);
+
+// 	if (
+// 		Number.isNaN(parseSum) ||
+// 		Number.isNaN(parsePercentage) ||
+// 		parseSum <= 0 ||
+// 		parsePercentage <= 0 ||
+// 		parsePercentage > 100
+// 	) {
+// 		alert('Invalid input data');
+// 	} else {
+// 		const percentageSum = Number(((parseSum / 100) * parsePercentage).toFixed(2));
+// 		const total = Number((parseSum + percentageSum).toFixed(2));
+// 		alert(
+// 			`Check summ: ${parseSum}
+// 			Tip: ${parsePercentage}%
+// 			Tip amount: ${percentageSum}
+// 			Total sum to pay: ${total}`
+// 		);
+// 	}
+// }
