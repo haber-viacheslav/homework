@@ -264,3 +264,16 @@
 // }
 
 // console.log(checkStorage(100, 50));
+
+// Setup
+// const myArray = [
+// 	['John', 23],
+// 	['dog', 3],
+// ];
+
+// myArray.shift();
+
+// myArray.shift(['Paul', 35]);
+
+// // Only change code below this line
+// console.log(myArray);
