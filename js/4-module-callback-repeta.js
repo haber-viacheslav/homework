@@ -537,56 +537,291 @@
 
 // Reduce---------------------------------------------------------------------------------------------
 
-const numbers = [5, 10, 15, 20, 25, 30];
+// const numbers = [5, 10, 15, 20, 25, 30];
 
-const total = numbers.reduce((acc, number) => {
-	console.log('number', number);
-	console.log('acc', acc);
-	return acc + number;
-}, 0);
+// const total = numbers.reduce((acc, number) => {
+// 	console.log('number', number);
+// 	console.log('acc', acc);
+// 	return acc + number;
+// }, 0);
 
-// const total = numbers.reduce((acc, number) => acc + number, 0);
+// // const total = numbers.reduce((acc, number) => acc + number, 0);
 
-console.log(total);
+// console.log(total);
 
-//функции --------------------
+// //функции --------------------
 
-// function expression---------------------------------->
-const multiply = function (a, b, c) {
-	const result = a * b * c;
-	return result;
-};
+// // function expression---------------------------------->
+// const multiply = function (a, b, c) {
+// 	const result = a * b * c;
+// 	return result;
+// };
 
-//function declaration--------------------------------->
-function multiplyDeclaration(a, b, c) {
-	const result = a * b * c;
-	return result;
-}
+// //function declaration--------------------------------->
+// function multiplyDeclaration(a, b, c) {
+// 	const result = a * b * c;
+// 	return result;
+// }
 
-console.log(multiply(1, 5, 8));
+// console.log(multiply(1, 5, 8));
 
-const multiplyRest = function (...args) {
-	let result = 1;
-	for (const arg of args) {
-		result *= arg;
-	}
+// const multiplyRest = function (...args) {
+// 	let result = 1;
+// 	for (const arg of args) {
+// 		result *= arg;
+// 	}
 
-	return result;
-};
+// 	return result;
+// };
 
-console.log(multiplyRest(1, 5, 8));
+// console.log(multiplyRest(1, 5, 8));
 
-// arrow function--------------------------------------->
+// // arrow function--------------------------------------->
 
-const multiplyArrow = (...args) =>
-	args.reduce((acc, element) => {
-		//(acc, element, idx, array )
-		acc *= element;
-		// console.log('array', array);
-		// console.log('index', idx);
+// const multiplyArrow = (...args) =>
+// 	args.reduce((acc, element) => {
+// 		//(acc, element, idx, array )
+// 		acc *= element;
+// 		// console.log('array', array);
+// 		// console.log('index', idx);
 
-		return acc;
-	}, 1);
+// 		return acc;
+// 	}, 1);
 
-console.log(multiplyArrow(1, 5, 8));
-console.log(multiplyArrow(1, 5, 8, 10, 5, 3, 4));
+// console.log(multiplyArrow(1, 5, 8));
+// console.log(multiplyArrow(1, 5, 8, 10, 5, 3, 4));
+
+// const salary = {
+// 	mango: 100,
+// 	polly: 90,
+// 	ajax: 130,
+// };
+
+// const totalSalary = object => Object.values(object).reduce(
+//     (acc, element) => acc + element, 0);
+// console.log(totalSalary(salary));
+
+// const players = [
+// 	{ id: 'player-1', name: 'Mango', isOnline: true, timePlayed: 400, points: 18 },
+// 	{ id: 'player-2', name: 'Poly', isOnline: false, timePlayed: 800, points: 51 },
+// 	{ id: 'player-3', name: 'John', isOnline: true, timePlayed: 465, points: 35 },
+// 	{ id: 'player-4', name: 'Piter', isOnline: true, timePlayed: 489, points: 39 },
+// 	{ id: 'player-5', name: 'Alex', isOnline: false, timePlayed: 538, points: 43 },
+// 	{ id: 'player-6', name: 'Dexter', isOnline: true, timePlayed: 415, points: 19 },
+// 	{ id: 'player-7', name: 'Sam', isOnline: false, timePlayed: 618, points: 49 },
+// 	{ id: 'player-8', name: 'Din', isOnline: false, timePlayed: 1500, points: 63 },
+// ];
+
+// const totalPlayedTime = (array) => array.reduce((total, {timePlayed}) => total + timePlayed, 0);
+// console.log(totalPlayedTime(players));
+
+// const card = [
+// 	{ label: 'Apples', price: 100, quantity: 2 },
+// 	{ label: 'Bananas', price: 230, quantity: 3 },
+// 	{ label: 'Lemons', price: 325, quantity: 4 },
+// 	{ label: 'Oranges', price: 180, quantity: 6 },
+// 	{ label: 'Plums', price: 280, quantity: 1 },
+// ];
+
+// const totalAmount = array =>
+// 	array.reduce((total, { price, quantity }) => total + price * quantity, 0);
+
+// console.log(totalAmount(card));
+
+const tweets = [
+	{ id: '000', likes: 5, tags: ['js', 'nodejs'] },
+	{ id: '001', likes: 2, tags: ['html', 'css'] },
+	{ id: '002', likes: 13, tags: ['js', 'css', 'nodejs'] },
+	{ id: '003', likes: 4, tags: ['css', 'nodejs'] },
+	{ id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+];
+
+// const flatter = array =>
+// 	array
+// 		.flatMap(({ tags }) => [...tags])
+// 		.filter((tag, idx, array) => array.indexOf(tag) === idx);
+// console.log(flatter(tweets));
+
+// const reducer = array =>
+// 	array.reduce((tags, tweet) => {
+// 		tags.push(...tweet.tags); //плохая практика!!!!!!!!!!!!!!!!!!!!!!!!!
+// 		return tags;
+// 	}, []);
+// console.log(reducer(tweets));
+
+// const allTags = array =>
+// 	array.reduce((tags, tweet) => [...tags, ...tweet.tags], []);
+// console.log(allTags(tweets));
+
+// const reducer = array =>
+// 	array.reduce((tags, tweet) => [...tags, ...tweet.tags], []); //REDUCE в массив
+// console.log(reducer(tweets));
+// const resultReducer = reducer(tweets);
+
+// const tweetStats = array => // вернёт объект с ключами массива и значением их количества в массиве
+// 	array.reduce((newObj, tag) => {
+// 		console.log(newObj);
+
+// 		if (newObj[tag]) {
+// 			newObj[tag] += 1;
+// 			return newObj;
+// 		}
+// 		newObj[tag] = 1;
+// 		return newObj;
+// 	}, {});
+
+// console.log(tweetStats(reducer(tweets)));
+
+// const tweetStats = array =>
+// 	array.reduce(
+// 		(newObj, tag) => ({
+// 			...newObj,
+// 			[tag]: newObj[tag] ? newObj[tag] + 1 : 1,
+// 		}),
+// 		{}
+// 	);
+
+// console.log(tweetStats(reducer(tweets)));
+
+// SORT
+
+// сортируте по возрастанию и приводит к строке сортирует по Unicode
+
+// const numbers = [1, 9, 5, 3, 7, 8];
+// console.log('numbers', numbers);
+
+// const sortedNumbers = numbers.sort((prev, next) => prev - next); // Мутабельно
+// const revSortedNumbers = numbers.sort((prev, next) => next - prev);
+
+// const imutableSortedNumbers = [...numbers].sort((prev, next) => prev - next); // Имутабельно
+// console.log(
+// 	'Сортированный массив чисел по возрастанию:',
+// 	imutableSortedNumbers
+// );
+
+// const imutebleRevSortedNumbers = [...numbers].sort((prev, next) => next - prev);
+// console.log(
+// 	'Сортированный массив чисел по убыванию:',
+// 	imutebleRevSortedNumbers
+// );
+
+// const letters = ['b', 'B', 'a', 'A', 'C', 'c'];
+// console.log('letters', letters);
+
+// const sortedLetters = [...letters].sort((prev, next) =>
+// 	prev.localeCompare(next)
+// );
+// console.log('Сортированный массив букв по возрастанию:', sortedLetters);
+
+// // const revSortedLetters = [...letters].sort((prev, next) =>
+// // 	next.localeCompare(prev)
+// // );
+
+// // OR
+// const revSortedLetters = sortedLetters.reverse();
+
+// console.log('Сортированный массив букв по убыванию:', revSortedLetters);
+
+const players = [
+	{
+		id: 'player-1',
+		name: 'Mango',
+		isOnline: true,
+		timePlayed: 400,
+		points: 18,
+	},
+	{
+		id: 'player-2',
+		name: 'Poly',
+		isOnline: false,
+		timePlayed: 800,
+		points: 51,
+	},
+	{
+		id: 'player-3',
+		name: 'John',
+		isOnline: true,
+		timePlayed: 465,
+		points: 35,
+	},
+	{
+		id: 'player-4',
+		name: 'Piter',
+		isOnline: true,
+		timePlayed: 489,
+		points: 39,
+	},
+	{
+		id: 'player-5',
+		name: 'Alex',
+		isOnline: false,
+		timePlayed: 538,
+		points: 43,
+	},
+	{
+		id: 'player-6',
+		name: 'Dexter',
+		isOnline: true,
+		timePlayed: 415,
+		points: 19,
+	},
+	{
+		id: 'player-7',
+		name: 'Sam',
+		isOnline: false,
+		timePlayed: 618,
+		points: 49,
+	},
+	{
+		id: 'player-8',
+		name: 'Din',
+		isOnline: false,
+		timePlayed: 1500,
+		points: 63,
+	},
+];
+
+// Сортировка по игровому времени
+
+// const sortedByBestTimePlayed = [...players].sort(
+// 	(prev, next) => next.timePlayed - prev.timePlayed
+// );
+// console.table(sortedByBestTimePlayed);
+
+// const reverseSortedByBestTimePlayed = sortedByBestTimePlayed.reverse();
+
+// console.table(reverseSortedByBestTimePlayed);
+
+// Сортировка по имени игрока
+
+// const sortedByName = array =>
+// 	[...array].sort((prevName, nextName) =>
+// 		prevName.name.localeCompare(nextName.name)
+// 	);
+// console.log(sortedByName(players));
+
+// const array = [1, 2, [3, [4]], [6, [7, 8, [9]]]];
+// console.log(array);
+
+// const flatedArray = array.flat(3); // аргумент при візове метода указывает глубину разлаживания!!!
+// console.table(flatedArray);
+
+// const flatedMapArray = array.flatMap(item => item);
+// console.dir(flatedMapArray);
+
+// const tags = tweets.map(item => item.tags).flat(); // 2 методами
+
+// const tags = tweets.flatMap(item => item.tags); // flatMap микс map и flat, работает только в одну глубину.
+// console.log(tags);
+
+const numbers = [1, 9, 5, 4, 15, 17, 25, 3, 7, 8];
+
+// const greeterThanThree = numbers
+// 	.filter(value => value > 3) // Фильтр больше 3
+// 	.map(value => value * 3)
+// 	.sort((prev, next) => prev - next); // Сортировка по возрастанию; // Усножение каждого элемента
+// console.log(greeterThanThree);
+
+// console.log(numbers);
+
+// console.log(_.sortBy(players, player => player.timePlayed));
