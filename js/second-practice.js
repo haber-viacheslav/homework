@@ -74,20 +74,105 @@
 //sum() возвращает сумму сохраненных значений
 //mult() перемножает сохраненные значения и возвращает результат
 
-const calculator = {
-	read(a, b) {
-		this.firstVal = a;
-		this.secondVal = b;
+// const calculator = {
+// 	read(a, b) {
+// 		this.firstVal = a;
+// 		this.secondVal = b;
+// 	},
+// 	sum() {
+// 		return this.firstVal && this.secondVal ? this.firstVal + this.secondVal : 'пустой объект';
+// 	},
+// 	mult() {
+// 		return this.firstVal && this.secondVal ? this.firstVal * this.secondVal : 'пустой объект';
+// 	},
+// };
+
+// console.log(calculator.read(1, 6));
+// console.dir(calculator);
+// console.log(calculator.sum());
+// console.log(calculator.mult());
+
+const users = [
+	{
+		name: 'Moore Hensley',
+		email: 'moorehensley@indexia.com',
+		eyeColor: 'blue',
+		friends: ['Sharron Pace'],
+		isActive: false,
+		balance: 2811,
+		gender: 'male',
 	},
-	sum() {
-		return this.firstVal && this.secondVal ? this.firstVal + this.secondVal : 'пустой объект';
+	{
+		name: 'Sharlene Bush',
+		email: 'sharlenebush@tubesys.com',
+		eyeColor: 'blue',
+		friends: ['Briana Decker', 'Sharron Pace'],
+		isActive: true,
+		balance: 3821,
+		gender: 'female',
 	},
-	mult() {
-		return this.firstVal && this.secondVal ? this.firstVal * this.secondVal : 'пустой объект';
+	{
+		name: 'Ross Vazquez',
+		email: 'rossvazquez@xinware.com',
+		eyeColor: 'green',
+		friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+		isActive: false,
+		balance: 3793,
+		gender: 'male',
 	},
+	{
+		name: 'Elma Head',
+		email: 'elmahead@omatom.com',
+		eyeColor: 'green',
+		friends: ['Goldie Gentry', 'Aisha Tran'],
+		isActive: true,
+		balance: 2278,
+		gender: 'female',
+	},
+	{
+		name: 'Carey Barr',
+		email: 'careybarr@nurali.com',
+		eyeColor: 'blue',
+		friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+		isActive: true,
+		balance: 3951,
+		gender: 'male',
+	},
+	{
+		name: 'Blackburn Dotson',
+		email: 'blackburndotson@furnigeer.com',
+		eyeColor: 'brown',
+		friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+		isActive: false,
+		balance: 1498,
+		gender: 'male',
+	},
+	{
+		name: 'Sheree Anthony',
+		email: 'shereeanthony@kog.com',
+		eyeColor: 'brown',
+		friends: ['Goldie Gentry', 'Briana Decker'],
+		isActive: true,
+		balance: 2764,
+		gender: 'female',
+	},
+];
+
+const newObjectAllValues = {};
+
+const sumProps = function (arr) {
+	const objectKeys = Object.keys(arr[0]);
+	for (const key of objectKeys) {
+		newObjectAllValues[key] = [];
+	}
+	for (const item in newObjectAllValues) {
+		// console.log(item);
+		for (const user of users) {
+			newObjectAllValues[item].push(user[item]);
+		}
+	}
+	console.log(newObjectAllValues);
+	return newObjectAllValues;
 };
 
-console.log(calculator.read(1, 6));
-console.dir(calculator);
-console.log(calculator.sum());
-console.log(calculator.mult());
+sumProps(users);
