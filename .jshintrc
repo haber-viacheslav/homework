@@ -9,7 +9,14 @@
 	"strict": false,
 	"browser": true,
 	"devel": true,
-	"jquery": true,
+	"maxdepth": true,
+	"supernew": true,
 	"esversion": 11,
-	"node": true
+	"module": true,
+	"node": true,
+	"boss": true,
+	"asi": true,
+	"debug": true,
+	"elision": true,
+	"lastsemic": true
 }
