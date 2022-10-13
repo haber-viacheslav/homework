@@ -707,23 +707,23 @@ checkPrice(price).
 // console.log(mango.isBlacklisted('mango@mail.com')); // false
 // console.log(mango.isBlacklisted('poly@mail.com')); // true
 
-const Animal = function (options) {
-	this.name = options.name;
-	this.color = options.color;
+// const Animal = function (options) {
+// 	this.name = options.name;
+// 	this.color = options.color;
 
-	// this.voice = function () {
-	// 	console.log('Wooff Wooff from', this.name);
-	// };
-};
+// 	// this.voice = function () {
+// 	// 	console.log('Wooff Wooff from', this.name);
+// 	// };
+// };
 
-const dog = new Animal({ name: 'Rex', color: 'broun' });
+// const dog = new Animal({ name: 'Rex', color: 'broun' });
 
-// dog.voice();
+// // dog.voice();
 
-const Cat = function (options) {
-	Animal.apply(this, arguments);
-	this.hasTail = options.hasTail;
-};
+// const Cat = function (options) {
+// 	Animal.apply(this, arguments);
+// 	this.hasTail = options.hasTail;
+// };
 
-const cat = new Cat({ name: 'Mia', color: '#000', hasTail: true });
-console.log(cat);
+// const cat = new Cat({ name: 'Mia', color: '#000', hasTail: true });
+// console.log(cat);
