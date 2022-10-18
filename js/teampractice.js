@@ -143,11 +143,12 @@ const users = [
 // 	for (const key of objectKeys) {
 // 		newObjectAllValues[key] = [];
 // 	}
-// 	console.log(newObjectAllValues);
+// 	// console.log(newObjectAllValues);
 
 // 	for (const item in newObjectAllValues) {
 // 		// console.log(item);
-// 		for (const user of users) {
+
+// 		for (const user of arr) {
 // 			newObjectAllValues[item].push(user[item]);
 // 		}
 // 	}
@@ -155,7 +156,7 @@ const users = [
 // 	return newObjectAllValues;
 // };
 
-// sumProps(users);
+// console.log(sumProps(users));
 
 // balance: [2811, 3821, 3793, 2278, 3951, 1498, 2764]
 // email: ['moorehensley@indexia.com', 'sharlenebush@tubesys.com', 'rossvazquez@xinware.com', 'elmahead@omatom.com', 'careybarr@nurali.com', 'blackburndotson@furnigeer.com', 'shereeanthony@kog.com']
