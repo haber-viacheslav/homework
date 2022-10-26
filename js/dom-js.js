@@ -168,28 +168,28 @@ imageEl.width = 350;
  * Создаём и добавляем новый пункт меню
  */
 
-const navItemEl = document.createElement('li');
-navItemEl.classList.add('site-nav__item');
+// const navItemEl = document.createElement('li');
+// navItemEl.classList.add('site-nav__item');
+// // console.log(navItemEl);
+
+// const navLinkEl = document.createElement('a');
+// navLinkEl.classList.add('site-nav__link');
+// navLinkEl.href = 'http://pomodoro.com';
+// navLinkEl.textContent = 'About Us';
+// // console.log(navLinkEl);
+
+// navItemEl.appendChild(navLinkEl);
 // console.log(navItemEl);
 
-const navLinkEl = document.createElement('a');
-navLinkEl.classList.add('site-nav__link');
-navLinkEl.href = 'http://pomodoro.com';
-navLinkEl.textContent = 'About Us';
-// console.log(navLinkEl);
+// const navEl = document.querySelector('.site-nav');
+// navEl.insertBefore(navItemEl, navEl.firstElementChild); // вариант если нужно его вставить в начало
+// // navEl.insertBefore(navItemEl, navEl.children[1]); // второй вариант если нужно поставить его кудато в средину
 
-navItemEl.appendChild(navLinkEl);
-console.log(navItemEl);
+// const heroEl = document.querySelector('.hero');
+// // heroEl.appendChild(titleEl);
+// // heroEl.appendChild(imageEl);
 
-const navEl = document.querySelector('.site-nav');
-navEl.insertBefore(navItemEl, navEl.firstElementChild); // вариант если нужно его вставить в начало
-// navEl.insertBefore(navItemEl, navEl.children[1]); // второй вариант если нужно поставить его кудато в средину
-
-const heroEl = document.querySelector('.hero');
-// heroEl.appendChild(titleEl);
-// heroEl.appendChild(imageEl);
-
-heroEl.append(titleEl, imageEl);
+// heroEl.append(titleEl, imageEl);
 
 //                                                 -6-
 
@@ -251,26 +251,26 @@ const option = colorPickerOptions[0];
 
 // colorPic.append(...elements);
 
-const makeColorPickerOptions = options => {
-	return options.map(option => {
-		const buttonEl = document.createElement('button');
-		buttonEl.type = 'button';
-		buttonEl.classList.add('color-picker__option');
-		buttonEl.textContent = option.label;
-		buttonEl.style.backgroundColor = option.color;
+// const makeColorPickerOptions = options => {
+// 	return options.map(option => {
+// 		const buttonEl = document.createElement('button');
+// 		buttonEl.type = 'button';
+// 		buttonEl.classList.add('color-picker__option');
+// 		buttonEl.textContent = option.label;
+// 		buttonEl.style.backgroundColor = option.color;
 
-		return buttonEl;
-	});
-};
+// 		return buttonEl;
+// 	});
+// };
 
-const elements = makeColorPickerOptions(colorPickerOptions);
-colorPic.append(...elements);
+// const elements = makeColorPickerOptions(colorPickerOptions);
+// colorPic.append(...elements);
 
 //                                                 -7-
 
-import products from './data/proucts.js';
+// import products from './data/proucts.js';
 
-console.log(products);
+// console.log(products);
 
 /*
  * Создаём карточку продукта
@@ -300,32 +300,32 @@ console.log(products);
  * Пишем функцию для создания карточки продукта
  */
 
-const makeProductCard = ({ name, description, price }) => {
-	const productEl = document.createElement('article');
-	productEl.classList.add('product');
-	const nameEl = document.createElement('h2');
-	nameEl.textContent = name;
-	nameEl.classList.add('product__name');
-	const descrEl = document.createElement('p');
-	descrEl.textContent = description;
-	descrEl.classList.add('product__descr');
-	const priceEl = document.createElement('p');
-	priceEl.textContent = `Price: ${price} credits`;
-	priceEl.classList.add('product__price');
-	productEl.append(nameEl, descrEl, priceEl);
-	return productEl;
-};
+// const makeProductCard = ({ name, description, price }) => {
+// 	const productEl = document.createElement('article');
+// 	productEl.classList.add('product');
+// 	const nameEl = document.createElement('h2');
+// 	nameEl.textContent = name;
+// 	nameEl.classList.add('product__name');
+// 	const descrEl = document.createElement('p');
+// 	descrEl.textContent = description;
+// 	descrEl.classList.add('product__descr');
+// 	const priceEl = document.createElement('p');
+// 	priceEl.textContent = `Price: ${price} credits`;
+// 	priceEl.classList.add('product__price');
+// 	productEl.append(nameEl, descrEl, priceEl);
+// 	return productEl;
+// };
 
-const productContainerEl = document.querySelector('.js-products');
+// const productContainerEl = document.querySelector('.js-products');
 
-console.log(makeProductCard(products[0]));
+// // console.log(makeProductCard(products[0]));
 
-// const elements = products.map(makeProductCard);
+// // const elements = products.map(makeProductCard);
 
-console.log(elements);
-productContainerEl.append(...elements);
+// console.log(elements);
+// productContainerEl.append(...elements);
 
-//                                                 -8-
+// //                                                 -8-
 
 /*
  * Свойство innerHTML
@@ -348,12 +348,12 @@ productContainerEl.append(...elements);
  * Вставка разметки с insertAdjacentHTML()
  */
 
-titleEl.insertAdjacentHTML('afterbegin', `<a href=""> This is link</a>`);
+// titleEl.insertAdjacentHTML('afterbegin', `<a href=""> This is link</a>`);
 
 //                                                   -9-
 
-import transactions from './data/transactions.js';
-import transactionHistory from './data/transactions.js';
+// import transactions from './data/transactions.js';
+// import transactionHistory from './data/transactions.js';
 
 // <tr>
 // 	<td>ID транзакции</td>
@@ -396,15 +396,15 @@ const makeTransactionTableRowMarkup = ({
     `;
 };
 // console.log(transactionHistory);
-console.log(makeTransactionTableRowMarkup(transactionHistory[0]));
+// console.log(makeTransactionTableRowMarkup(transactionHistory[0]));
 
-const makeTransactionTableRowsMarkup = transactionHistory
-	.map(makeTransactionTableRowMarkup)
-	.join('');
-console.log(makeTransactionTableRowsMarkup);
+// const makeTransactionTableRowsMarkup = transactionHistory
+// 	.map(makeTransactionTableRowMarkup)
+// 	.join('');
+// console.log(makeTransactionTableRowsMarkup);
 
-const tableEL = document.querySelector('.js-transaction-table');
-tableEL.insertAdjacentHTML('beforeend', makeTransactionTableRowsMarkup);
+// const tableEL = document.querySelector('.js-transaction-table');
+// tableEL.insertAdjacentHTML('beforeend', makeTransactionTableRowsMarkup);
 
 //                                                 -1-
 
@@ -419,33 +419,33 @@ tableEL.insertAdjacentHTML('beforeend', makeTransactionTableRowsMarkup);
  * - Объект события
  */
 
-const targetBtn = document.querySelector('.js-target-btn');
-const addListenerBtn = document.querySelector('.js-add-listener');
-const removeListenerBtn = document.querySelector('.js-remove-listener');
+// const targetBtn = document.querySelector('.js-target-btn');
+// const addListenerBtn = document.querySelector('.js-add-listener');
+// const removeListenerBtn = document.querySelector('.js-remove-listener');
 
-addListenerBtn.addEventListener('click', event => {
-	console.log(event);
+// addListenerBtn.addEventListener('click', event => {
+// 	console.log(event);
 
-	console.log('Добавление слушателя на целевую кнопку');
-	targetBtn.addEventListener('click', onTargetBtnClick);
-});
+// 	console.log('Добавление слушателя на целевую кнопку');
+// 	targetBtn.addEventListener('click', onTargetBtnClick);
+// });
 
-removeListenerBtn.addEventListener('click', event => {
-	console.log(event);
+// removeListenerBtn.addEventListener('click', event => {
+// 	console.log(event);
 
-	console.log('Удаление слушателя с целевой кнопки');
-	targetBtn.removeEventListener('click', onTargetBtnClick);
-});
+// 	console.log('Удаление слушателя с целевой кнопки');
+// 	targetBtn.removeEventListener('click', onTargetBtnClick);
+// });
 
-function onTargetBtnClick(event) {
-	logMessage();
-}
+// function onTargetBtnClick(event) {
+// 	logMessage();
+// }
 
-function logMessage() {
-	console.log('Клик по целевой кнопке');
-}
+// function logMessage() {
+// 	console.log('Клик по целевой кнопке');
+// }
 
-//                                               -2-
+// //                                               -2-
 
 /*
  * - Событие submit
@@ -454,33 +454,33 @@ function logMessage() {
  * - Класс FormData - https://developer.mozilla.org/en-US/docs/Web/API/FormData
  */
 
-const form = document.querySelector('.js-register-form');
+// const form = document.querySelector('.js-register-form');
 
-form.addEventListener('submit', onFormSubmit);
+// form.addEventListener('submit', onFormSubmit);
 
-function onFormSubmit(event) {
-	event.preventDefault();
+// function onFormSubmit(event) {
+// 	event.preventDefault();
 
-	const formData = new FormData(event.currentTarget);
+// 	const formData = new FormData(event.currentTarget);
 
-	// console.log(formData);
+// 	// console.log(formData);
 
-	formData.forEach((value, key) => {
-		console.log(`Значение ${key}: ${value}`);
-	});
+// 	formData.forEach((value, key) => {
+// 		console.log(`Значение ${key}: ${value}`);
+// 	});
 
-	// const formElements = event.currentTarget.elements;
-	// console.log(formElements.subscription.value);
-	// const mail = formElements.email.value;
-	// const password = formElements.password.value;
-	// console.log("Это событие формы");
-	// console.log(`Почта: ${mail}, пароль: ${password}`);
-	// const formData = {
-	// 	mail,
-	// 	password,
-	// };
-	// console.log(formData);
-}
+// const formElements = event.currentTarget.elements;
+// console.log(formElements.subscription.value);
+// const mail = formElements.email.value;
+// const password = formElements.password.value;
+// console.log("Это событие формы");
+// console.log(`Почта: ${mail}, пароль: ${password}`);
+// const formData = {
+// 	mail,
+// 	password,
+// };
+// console.log(formData);
+// }
 
 //                                                 -3-
 
@@ -493,42 +493,42 @@ function onFormSubmit(event) {
  * - Чекбоксы и свойство checked
  */
 
-const refs = {
-	input: document.querySelector('.js-input'),
-	nameLabel: document.querySelector('.js-button > span'),
-	licenseCheckbox: document.querySelector('.js-license'),
-	btn: document.querySelector('.js-button'),
-};
+// const refs = {
+// 	input: document.querySelector('.js-input'),
+// 	nameLabel: document.querySelector('.js-button > span'),
+// 	licenseCheckbox: document.querySelector('.js-license'),
+// 	btn: document.querySelector('.js-button'),
+// };
 
 // refs.input.addEventListener("focus", onInputFocus); // Focus
 // refs.input.addEventListener("blur", onInputBlur); // Blur
 // refs.input.addEventListener("change", onInputChange); // Change для работы с чекбоксами и радиобаттонами, селектами.
 // refs.input.addEventListener("input", onInputInput);
 
-refs.input.addEventListener('input', onInputInput);
-refs.licenseCheckbox.addEventListener('change', onLicenceChange);
+// refs.input.addEventListener('input', onInputInput);
+// refs.licenseCheckbox.addEventListener('change', onLicenceChange);
 
-function onInputFocus() {
-	console.log('Input get focus');
-}
+// function onInputFocus() {
+// 	console.log('Input get focus');
+// }
 
-function onInputBlur() {
-	console.log('Input lose focus');
-}
+// function onInputBlur() {
+// 	console.log('Input lose focus');
+// }
 
-function onInputChange(event) {
-	console.log(event.currentTarget.value);
-}
+// function onInputChange(event) {
+// 	console.log(event.currentTarget.value);
+// }
 
-function onInputInput(event) {
-	// console.log(event.currentTarget.value);
-	refs.nameLabel.textContent = event.currentTarget.value;
-}
+// function onInputInput(event) {
+// 	// console.log(event.currentTarget.value);
+// 	refs.nameLabel.textContent = event.currentTarget.value;
+// }
 
-function onLicenceChange(event) {
-	console.log(event.currentTarget.checked);
-	refs.btn.disabled = !event.currentTarget.checked;
-}
+// function onLicenceChange(event) {
+// 	console.log(event.currentTarget.checked);
+// 	refs.btn.disabled = !event.currentTarget.checked;
+// }
 
 //                                                -4-
 /*
@@ -542,23 +542,23 @@ function onLicenceChange(event) {
 // 	clearBtn: document.querySelector(".js-clear"),
 // };
 
-window.addEventListener('keypress', onKeyPress);
+// window.addEventListener('keypress', onKeyPress);
 
-refs.clearBtn.addEventListener('click', onClearOutput);
+// refs.clearBtn.addEventListener('click', onClearOutput);
 
-function onKeyPress(event) {
-	// console.log(event);
-	// console.log("event.key: ", event.key);
-	// console.log("event.code: ", event.code);
+// function onKeyPress(event) {
+// 	// console.log(event);
+// 	// console.log("event.key: ", event.key);
+// 	// console.log("event.code: ", event.code);
 
-	refs.output.textContent += event.key;
-}
+// 	refs.output.textContent += event.key;
+// }
 
-function onClearOutput() {
-	refs.output.textContent = '';
-}
+// function onClearOutput() {
+// 	refs.output.textContent = '';
+// }
 
-//                                              -5-
+// //                                              -5-
 
 /*
  * События мыши
@@ -569,25 +569,25 @@ function onClearOutput() {
  * - Хорошая задачка - https://learn.javascript.ru/task/move-ball-field
  */
 
-const boxRef = document.querySelector('.js-box');
+// const boxRef = document.querySelector('.js-box');
 
-boxRef.addEventListener('mouseover', onMouseEnter);
-boxRef.addEventListener('mouseout', onMouseLeave);
-// boxRef.addEventListener('mousemove', onMouseMove);
+// boxRef.addEventListener('mouseover', onMouseEnter);
+// boxRef.addEventListener('mouseout', onMouseLeave);
+// // boxRef.addEventListener('mousemove', onMouseMove);
 
-function onMouseEnter(event) {
-	const box = event.currentTarget;
-	box.classList.add('box--active');
-}
+// function onMouseEnter(event) {
+// 	const box = event.currentTarget;
+// 	box.classList.add('box--active');
+// }
 
-function onMouseLeave(event) {
-	const box = event.currentTarget;
-	box.classList.remove('box--active');
-}
+// function onMouseLeave(event) {
+// 	const box = event.currentTarget;
+// 	box.classList.remove('box--active');
+// }
 
-function onMouseMove(event) {
-	console.log(event);
-}
+// function onMouseMove(event) {
+// 	console.log(event);
+// }
 
 //                                                -6-
 
@@ -605,39 +605,39 @@ function onMouseMove(event) {
 // 	backdrop: document.querySelector(".js-backdrop"),
 // };
 
-refs.openModalBtn.addEventListener('click', onOpenModal);
-refs.closeModalBtn.addEventListener('click', onCloseModal);
-refs.backdrop.addEventListener('click', onBackDropClick);
+// refs.openModalBtn.addEventListener('click', onOpenModal);
+// refs.closeModalBtn.addEventListener('click', onCloseModal);
+// refs.backdrop.addEventListener('click', onBackDropClick);
 
-function onOpenModal() {
-	document.body.classList.add('show-modal');
-	window.addEventListener('keydown', onEscKeyPress);
-}
+// function onOpenModal() {
+// 	document.body.classList.add('show-modal');
+// 	window.addEventListener('keydown', onEscKeyPress);
+// }
 
-function onCloseModal() {
-	document.body.classList.remove('show-modal');
-	window.removeEventListener('keydown', onEscKeyPress);
-}
+// function onCloseModal() {
+// 	document.body.classList.remove('show-modal');
+// 	window.removeEventListener('keydown', onEscKeyPress);
+// }
 
-function onBackDropClick(event) {
-	// console.log("click on backdrop");
-	// console.log(event.currentTarget);
-	// console.log(event.target);
-	if (event.currentTarget === event.target) {
-		// console.log("Клик именно по BackDrop");
-		onCloseModal();
-	}
-}
+// function onBackDropClick(event) {
+// 	// console.log("click on backdrop");
+// 	// console.log(event.currentTarget);
+// 	// console.log(event.target);
+// 	if (event.currentTarget === event.target) {
+// 		// console.log("Клик именно по BackDrop");
+// 		onCloseModal();
+// 	}
+// }
 
-function onEscKeyPress(event) {
-	const ESC_KEY_CODE = 'Escape';
-	const isEcsKey = event.code === ESC_KEY_CODE;
-	if (isEcsKey) {
-		// console.log("Escape");
+// function onEscKeyPress(event) {
+// 	const ESC_KEY_CODE = 'Escape';
+// 	const isEcsKey = event.code === ESC_KEY_CODE;
+// 	if (isEcsKey) {
+// 		// console.log("Escape");
 
-		onCloseModal();
-	}
-}
+// 		onCloseModal();
+// 	}
+// }
 
 //-----------------------------------------------Фрилансер по жизни--------------------------------------
 
@@ -777,3 +777,162 @@ const heroTitle = document.querySelector('.hero__title');
 
 // const itemEl = document.createElement('li');
 // listEl.append(itemEl);
+
+//----------------Artem Lesson 11-------------------------------
+
+// https://dou.ua/lenta/articles/interview-questions-javascript-developer/
+// const elem = document.querySelector('.js-elem');
+// console.dir(elem);
+// const refs = {
+// 	staticItems: document.querySelectorAll('.js-item'),
+// 	dynemicItems: document.getElementsByClassName('js-item'),
+// 	ul: document.querySelector('ul'),
+// };
+// console.dir(refs.ul);
+// [...refs.ul.firstElementChild.children].forEach(item => {
+//     // console.dir(item);
+//     if(item.firstElementChild ?  item.firstElementChild.tagName === 'H1' : false){
+//        console.log( item.firstElementChild.textContent);
+//     }
+// })
+// OLD SCHOOL
+// console.log(refs.dynemicItems[refs.dynemicItems.length-1]);
+// const arr = [];
+// for (let i = 1; i <= 3; i += 1) {
+//     const li = document.createElement('li');
+//     const img = document.createElement('img');
+//     const div = document.createElement('div');
+//     const a = document.createElement('a')
+//     div.append(a);
+//     li.append(div);
+//     li.append(img)
+//     li.classList.add('js-item');
+//     li.textContent = Number(refs.ul.lastElementChild.textContent) + i
+//     arr.push(li)
+// }
+// refs.ul.append(...arr);
+// console.log(refs.dynemicItems[refs.dynemicItems.length - 1]);
+// console.dir(refs.ul);
+// console.log('staticItems', refs.staticItems);
+// console.log('dynemicItems', refs.dynemicItems);
+
+// const arr = []
+// for (let i = 1; i <= 30; i += 1) {
+// const markup = `<li class="js-item">${Number(refs.ul.lastElementChild.textContent) + i}</li>`
+// arr.push(markup)
+// }
+// refs.ul.insertAdjacentHTML('beforeend',arr.join(''))
+// console.log(arr.join(''));
+
+// const refs = {
+// 	text: document.querySelector('h1'),
+// 	input: document.querySelector('input'),
+// };
+
+// console.dir(refs.input);
+// console.dir(refs.text.dataset.id);
+// console.log('data-id', refs.text.getAttribute('data-id'));
+// console.log('id', refs.text.getAttribute('id'));
+// refs.input.value = refs.text.textContent;
+// const test = document.querySelector('.js-list');
+// test.classList.remove('js-list');
+const cars = [
+	{
+		id: 1,
+		car: 'Honda',
+		type: 'Civic',
+		price: 12000,
+		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+	},
+	{
+		id: 2,
+		car: 'Audi',
+		type: 'Q7',
+		price: 40000,
+		img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+	},
+	{
+		id: 33,
+		car: 'BMW',
+		type: '5 siries',
+		price: 9000,
+		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+	},
+	{
+		id: 3,
+		car: 'Honda',
+		type: 'Accord',
+		price: 20000,
+		number: '+380000000000',
+		img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+	},
+	{
+		id: 4,
+		car: 'Volvo',
+		type: 'XC60',
+		price: 7000,
+		img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+	},
+];
+// const click = document.querySelector('.click')
+// click.addEventListener('click', ()=>{
+//     const listRef = document.querySelector('.js-list');
+//     const markup = cars.reduce((acc, {
+//         car,
+//         type,
+//         price,
+//         img,
+//         id
+//     }) => acc + `<li data-id=${id}>
+//     <img src="${img}" alt="${type}" class="img-car">
+//     <h2>Марка: ${car}</h2>
+//     <h2>Модель: ${type}</h2>
+//     <p>Ціна: ${price}</p>
+//     </li>`, '')
+//     test.insertAdjacentHTML('beforeend', markup)
+// })
+const listRef = document.querySelector('.js-list');
+listRef.classList.remove('js-list');
+const markup = cars
+	.map(
+		({ car, type, price, img, id }) => `<li data-id=${id}>
+<img src="${img}" alt="${type}" class="img-car">
+<h2>Марка: ${car}</h2>
+<h2>Модель: ${type}</h2>
+<p>Ціна: ${price}</p>
+</li>`
+	)
+	.join('');
+
+// const markup = cars.reduce((acc, {
+//     car,
+//     type,
+//     price,
+//     img,
+//     id
+// }) => acc + `<li data-id=${id}>
+// <img src="${img}" alt="${type}" class="img-car">
+// <h2>Марка: ${car}</h2>
+// <h2>Модель: ${type}</h2>
+// <p>Ціна: ${price}</p>
+// <div> ${id}</div>
+// </li>`, '')
+
+// listRef.style.listStyle = 'none';
+// listRef.style.display = 'flex';
+// listRef.style.flexWrap = 'wrap';
+// listRef.style.justifyContent ='space-between';
+// // console.timeEnd('reduce');
+
+// // console.log(markup);
+// refs.ul.insertAdjacentHTML('beforeend', markup)
+// refs.ul.addEventListener('click', (e)=>{
+// if(e.target.closest('li')){
+//     const id = e.target.closest('li').dataset.id
+// const currentCar = cars.find(({id: carId}) => carId === Number(id))
+// alert(currentCar.number)
+// }
+// })
+// const items = document.querySelectorAll('li');
+// items.forEach(item => item.style.width = '300px')
+// console.log(items);

@@ -1,0 +1,61 @@
+.container {
+	border: 2px solid black;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 1280px;
+	height: 800px;
+	background-color: rgb(148, 91, 91);
+}
+
+.main-container {
+	padding: 30px;
+	outline: 1px solid #f00;
+}
+
+.main-button {
+	padding: 10px;
+	border: 2px brown;
+	border-radius: 30px;
+	margin-bottom: 20px;
+}
+.main-parent {
+	border: 2px solid black;
+	margin: 0 auto;
+	width: 80%;
+	height: 80%;
+	background-color: rgb(106, 252, 73);
+}
+
+.parent {
+	border: 2px solid black;
+	margin: 0 auto;
+	width: 80%;
+	height: 80%;
+	background-color: rgb(73, 231, 252);
+}
+
+.child {
+	border: 2px solid black;
+	margin: 0 auto;
+	width: 80%;
+	height: 80%;
+	background-color: rgb(225, 252, 73);
+}
+
+.inner-child {
+	border: 2px solid black;
+	margin: 0 auto;
+	width: 80%;
+	height: 80%;
+	background-color: rgb(85, 73, 252);
+}
+
+.click-btn {
+	border: 2px solid black;
+	margin: 0 auto;
+	display: block;
+	width: 60px;
+	height: 20px;
+	background-color: rgb(252, 73, 85);
+}
