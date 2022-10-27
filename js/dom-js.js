@@ -891,18 +891,18 @@ const cars = [
 //     </li>`, '')
 //     test.insertAdjacentHTML('beforeend', markup)
 // })
-const listRef = document.querySelector('.js-list');
-listRef.classList.remove('js-list');
-const markup = cars
-	.map(
-		({ car, type, price, img, id }) => `<li data-id=${id}>
-<img src="${img}" alt="${type}" class="img-car">
-<h2>Марка: ${car}</h2>
-<h2>Модель: ${type}</h2>
-<p>Ціна: ${price}</p>
-</li>`
-	)
-	.join('');
+// const listRef = document.querySelector('.js-list');
+// listRef.classList.remove('js-list');
+// const markup = cars
+// 	.map(
+// 		({ car, type, price, img, id }) => `<li data-id=${id}>
+// <img src="${img}" alt="${type}" class="img-car">
+// <h2>Марка: ${car}</h2>
+// <h2>Модель: ${type}</h2>
+// <p>Ціна: ${price}</p>
+// </li>`
+// 	)
+// 	.join('');
 
 // const markup = cars.reduce((acc, {
 //     car,
@@ -936,3 +936,38 @@ const markup = cars
 // const items = document.querySelectorAll('li');
 // items.forEach(item => item.style.width = '300px')
 // console.log(items);
+
+// const listBtnRef = document.querySelector('.js-container');
+// console.dir(listBtnRef);
+// const childrenList = listBtnRef.children;
+// const childrenList1 = document.querySelectorAll('[type="button"]');
+// console.log(childrenList);
+// console.log(childrenList[2].parentNode);
+// console.log(childrenList[0].nextElementSibling);
+// console.log(childrenList1[1].textContent);
+
+// const murkup = cars
+// 	.map(el => {
+// 		return `Name of button ${el.car}`;
+// 	})
+// 	.join('');
+
+// console.log(murkup);
+// console.log(listBtnRef.dataset);
+
+// const formEl = document.querySelector('.form');
+
+// formEl.addEventListener('submit', onSubmit);
+
+// function onSubmit(evt) {
+// 	evt.preventDefault();
+
+// 	console.dir(evt.currentTarget);
+
+// 	const { login, password } = evt.currentTarget.elements;
+// 	if (login.value === '' || password.value === '') {
+// 		return console.log('Please fill in all the fields');
+// 	}
+
+// 	console.log(`Login ${login.value}, Password ${password.value}`);
+// }

@@ -59,3 +59,7 @@
 	height: 20px;
 	background-color: rgb(252, 73, 85);
 }
+
+.form-container {
+	padding: 20px;
+}
