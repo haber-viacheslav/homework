@@ -65,30 +65,30 @@
 // 	console.log('onButtonClick -> event.currentTarget', event.currentTarget);
 // }
 
-const containerRef = document.querySelector('.js-container');
+// const containerRef = document.querySelector('.js-container');
 
-containerRef.addEventListener('click', onClick);
+// containerRef.addEventListener('click', onClick);
 
-function onClick(evt) {
-	if (evt.target.nodeName !== 'BUTTON') {
-		return;
-	}
-	// console.log(evt.target.nodeName);
-	console.log(evt.currentTarget);
-	console.log(evt.target);
-}
+// function onClick(evt) {
+// 	if (evt.target.nodeName !== 'BUTTON') {
+// 		return;
+// 	}
+// 	// console.log(evt.target.nodeName);
+// 	console.log(evt.currentTarget);
+// 	console.log(evt.target);
+// }
 
-const addBtn = document.querySelector('.js-button');
-let labelCounter = 6;
+// const addBtn = document.querySelector('.js-button');
+// let labelCounter = 6;
 
-addBtn.addEventListener('click', onAddButtons);
+// addBtn.addEventListener('click', onAddButtons);
 
-function onAddButtons() {
-	const btn = document.createElement('button');
-	btn.textContent = `Кнопка ${labelCounter}`;
-	btn.type = 'button';
-	console.log(btn);
+// function onAddButtons() {
+// 	const btn = document.createElement('button');
+// 	btn.textContent = `Кнопка ${labelCounter}`;
+// 	btn.type = 'button';
+// 	console.log(btn);
 
-	containerRef.append(btn);
-	labelCounter += 1;
-}
+// 	containerRef.append(btn);
+// 	labelCounter += 1;
+// }
