@@ -695,7 +695,9 @@
 // console.log(storage.items); // [ '🍎', '🍇', '🍑', '🍌' ]
 
 // Example 3 - User
-// Напиши клас User який створює об'єкт із властивостями login та email. Оголоси приватні властивості #login та #email, доступ до яких зроби через геттер та сеттер login та email.
+// Напиши клас User який створює об'єкт із властивостями login та email.
+// Оголоси приватні властивості #login та #email, доступ до яких зроби
+// через геттер та сеттер login та email.
 
 // class User {}
 
@@ -812,6 +814,338 @@
 
 // Example 5 - Toggle
 // Напишіть клас Toggle, який приймає об'єкт налаштувань {isOpen: boolean} і оголошує одну властивість on - стан вкл/викл (true/false). За зомовчуванням значення властивості on має бути false.
+
+// const firstToggle = new Toggle({ isOpen: true });
+// console.group('firstToggle');
+// console.log(firstToggle.on);
+// firstToggle.toggle();
+// console.log(firstToggle.on);
+// console.groupEnd('firstToggle');
+
+// const secondToggle = new Toggle();
+// console.group('secondToggle');
+// console.log(secondToggle.on);
+// secondToggle.toggle();
+// console.log(secondToggle.on);
+// console.groupEnd('secondToggle');
+
+// const user = {
+// 	name: 'Eric',
+// 	surname: 'Polak',
+// 	age: 22,
+// };
+
+// console.log(user);
+
+// String.prototype.sayHello = function (name) {
+// 	console.log(`Hello ${name}`);
+// };
+
+// 'gggg'.sayHello('Eric');
+
+// const array = [1, 6, 8, 4, 2, 6, 7, 9];
+
+// array.forEach(value => console.log(value));
+
+// const newUser = Object.create(user);
+
+// console.log(newUser);
+
+// const newGamer = Object.create(newUser);
+
+// console.log(newGamer.age);
+
+// class User {
+// 	constructor(val1, val2) {
+// 		this.name = val1;
+// 		this.email = val2;
+// 	}
+
+// 	getEmail() {
+// 		console.log(this.email);
+// 	}
+
+// 	setEmail(newEmail) {
+// 		this.email = newEmail;
+// 	}
+// }
+
+// const objA = new User('User', 'user@gmail.com');
+// console.log(objA);
+
+// objA.getEmail();
+// objA.setEmail('new-user@gmail.com');
+// console.log(objA);
+
+// class User {
+// 	static role = {
+// 		admin: 'Admin',
+// 		user: 'User',
+// 		superAdmin: 'SuperAdmin',
+// 	};
+
+// 	static total = 0;
+// 	static counter() {
+// 		User.total += 1;
+// 		console.log(User.total);
+// 	}
+// 	#password;
+// 	constructor(name, mail, pass, role) {
+// 		this.name = name;
+// 		this.email = mail;
+// 		this.#password = pass;
+// 		this.role = role;
+// 		User.counter();
+// 	}
+
+// 	get userEmail() {
+// 		console.log(this.email);
+// 	}
+
+// 	set userEmail(newEmail) {
+// 		this.email = newEmail;
+// 	}
+
+// 	get userPwd() {
+// 		return this.#password;
+// 	}
+
+// 	set userPwd(newPwd) {
+// 		this.#checkPassword(newPwd);
+// 	}
+
+// 	#checkPassword(newPwd) {
+// 		if (newPwd.length >= 6) {
+// 			this.#password = newPwd;
+// 		} else {
+// 			console.log('Need longest password');
+// 		}
+// 	}
+// }
+
+// const user = new User('User', 'user@gmail.com', '35453vdvd', User.role.user);
+// const admin = new User(
+// 	'Admin',
+// 	'admin@gmail.com',
+// 	'35s45s3vdvd',
+// 	User.role.admin
+// );
+// const superAdmin = new User(
+// 	'SuperAdmin',
+// 	'super-admin@gmail.com',
+// 	'Ghjhskcvdvd',
+// 	User.role.superAdmin
+// );
+
+// user.userEmail;
+// user.userEmail = 'new-user@gmail.com';
+
+// user.userEmail;
+
+// superAdmin.userPwd = 'ggggg';
+// superAdmin.userPwd = 'gggggcccccdc';
+// console.log(superAdmin);
+
+// console.log(User.role);
+
+/*
+class Blogger {
+	constructor({ email, age, posts, topics } = {}) {
+		this.email = email;
+		this.age = age;
+		this.numberOfPosts = posts;
+		this.topics = topics;
+	}
+	getInfo() {
+		return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts.`;
+	}
+	updatePostCount(value) {
+ 		this.numberOfPosts += value;
+ 	}
+ 	}
+ */
+
+// const lari = new Blogger({
+// 	email: 'lari@gmail.com',
+// 	age: 23,
+// 	posts: 15,
+// 	topics: ['adventure', 'humor', 'family', 'fun'],
+// });
+// console.log(lari);
+// lari.updatePostCount(23);
+// console.log(lari.getInfo());
+
+// Example 2 - Сховище
+// Напиши клас Storage, який створює об'єкти для управління складом товарів.
+// При виклику отримуватиме один аргумент - початковий масив товарів,
+// і записуватиме його у властивість items.
+
+// Додай методи класу:
+
+// getItems() – повертає масив товарів.
+// addItem(item) - отримує новий товар та додає його до поточних.
+// removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних.
+
+// class Storage {
+// 	constructor(arrayGoods) {
+// 		this.items = arrayGoods;
+// 	}
+// 	getItems() {
+// 		return this.items;
+// 	}
+// 	addItem(item) {
+// 		this.items.push(item);
+// 	}
+// 	removeItem(item) {
+// 		if (this.items.includes(item)) {
+// 			this.items.splice(this.items.indexOf(item), 1);
+// 		} else {
+// 			console.log('Nema');
+// 		}
+// 	}
+// }
+
+// const fruits = new Storage(['🍎', '🍋', '🍇', '🍑']);
+// console.log(fruits);
+// fruits.addItem('🍌');
+// console.log(fruits);
+// fruits.removeItem('🍎');
+// console.log(fruits);
+
+// console.log(!!~-1);
+// console.log(!!~0);
+// console.log(!!~-3);
+
+// Example 3 - User
+// Напиши клас User який створює об'єкт із властивостями login та email.
+// Оголоси приватні властивості #login та #email, доступ до яких зроби
+// через геттер та сеттер login та email.
+
+// class User {
+// 	#login;
+// 	#email;
+// 	constructor({ login, email } = {}) {
+// 		this.#login = login;
+// 		this.#email = email;
+// 	}
+// 	get userLogin() {
+// 		return this.#login;
+// 	}
+
+// 	set userLogin(newLogin) {
+// 		newLogin !== this.#login
+// 			? (this.#login = newLogin)
+// 			: `Этот логин уже существует, введите новый`;
+// 		// if (!newLogin === this.#login) {
+// 		// 	return (this.#login = newLogin);
+// 		// } else {
+// 		// 	return `Этот логин уже существует, введите новый`;
+// 		// }
+// 	}
+// 	get userEmail() {
+// 		return this.#email;
+// 	}
+
+// 	set userEmail(newEmail) {
+// 		return newEmail.length > 8 && newEmail !== this.#email
+// 			? (this.#email = newEmail)
+// 			: `Введите пароль длинной более 8 символов`;
+// 		// if (newEmail.length > 8) {
+// 		// 	this.#email = newEmail;
+// 		// } else {
+// 		// 	return `Введите пароль длинной более 8 символов`
+// 		// }
+// 	}
+// }
+
+// const mango = new User({
+// 	login: 'Mango',
+// 	email: 'mango@dog.woof',
+// });
+
+// console.log(mango);
+
+// mango.userEmail = 'mango@dog.woof';
+// mango.userEmail = 'mo@d.w';
+// console.log(mango.userLogin);
+// console.log(mango.userEmail);
+
+// Example 4 - Нотатки
+// Напиши клас Notes, який управляє колекцією нотаток у властивості items.
+// Нотатка це об'єкт із властивостями text та priority.
+// Додай класу статичну властивість Priority, у якій зберігатиметься об'єкт із пріоритетами.
+// {
+//   LOW: 'low',
+//   NORMAL: 'normal',
+//   HIGH: 'high'
+// }
+
+// Додай методи addNote(note), removeNote(text) та updatePriority(text, newPriority).
+
+// class Notes {
+// 	static Priority = {
+// 		LOW: 'low',
+// 		NORMAL: 'normal',
+// 		HIGH: 'high',
+// 	};
+
+// 	constructor(array) {
+// 		this.items = array;
+// 	}
+
+// 	addNote(note) {
+// 		this.items.push(note);
+// 	}
+
+// 	removeNote(text) {
+// 		const idx = this.items.findIndex(
+// 			({ text: itemText }) => text === itemText
+// 		);
+// 		!!~idx ? this.items.splice(idx, 1) : console.log('Not found');
+// 	}
+
+// 	updatePriority(text, newPriority) {
+// 		const inArr = this.items.find(item => item.text === text);
+// 		inArr ? (inArr.priority = newPriority) : console.log('Not found');
+// 	}
+// }
+
+// const myNotes = new Notes([]);
+
+// myNotes.addNote({
+// 	text: 'Моя перша нотатка',
+// 	priority: Notes.Priority.LOW,
+// });
+// myNotes.addNote({
+// 	text: 'Моя друга нотатка',
+// 	priority: Notes.Priority.LOW,
+// });
+// myNotes.addNote({
+// 	text: 'Моя третя нотатка',
+// 	priority: Notes.Priority.LOW,
+// });
+// console.log(myNotes.items);
+
+// myNotes.removeNote('Моя перша нотатка');
+// myNotes.removeNote('Моя четверта нотатка');
+// console.log(myNotes.items);
+
+// myNotes.updatePriority('Моя друга нотатка', Notes.Priority.HIGH);
+// console.log(myNotes.items);
+
+// Example 5 - Toggle
+// Напишіть клас Toggle, який приймає об'єкт налаштувань {isOpen: boolean}
+//  і оголошує одну властивість on - стан вкл / викл(true / false).
+//  За зомовчуванням значення властивості on має бути false.
+
+// class Toggle {
+// 	constructor({ isOpen = false } = {}) {
+// 		this.on = isOpen;
+// 	}
+// 	toggle() {
+// 		this.on = !this.on;
+// 	}
+// }
 
 // const firstToggle = new Toggle({ isOpen: true });
 // console.group('firstToggle');
