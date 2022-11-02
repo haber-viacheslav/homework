@@ -63,3 +63,12 @@
 .form-container {
 	padding: 20px;
 }
+
+.list {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 30px;
+	flex-wrap: wrap;
+}

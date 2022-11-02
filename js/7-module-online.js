@@ -1,21 +1,100 @@
-// const instruments = [{
-//     id: 1,
-//     img: 'https://static.dnipro-m.ua/cache/products/1754/catalog_origin_141546.jpg',
-//     name: 'Молоток',
-//     price: 150
-// }, {
-//     id: 2,
-//     img: 'https://static.dnipro-m.ua/cache/products/5098/catalog_origin_195568.jpg',
-//     name: 'Перфоратор',
-//     price: 3000
-// }, {
-//     id: 3,
-//     img: 'https://static.dnipro-m.ua/cache/products/2023/catalog_origin_200763.jpg',
-//     name: 'Рівень',
-//     price: 2000
-// }]
+// const instruments = [
+// 	{
+// 		id: 1,
+// 		img: 'https://static.dnipro-m.ua/cache/products/1754/catalog_origin_141546.jpg',
+// 		name: 'Молоток',
+// 		price: 150,
+// 	},
+// 	{
+// 		id: 2,
+// 		img: 'https://static.dnipro-m.ua/cache/products/5098/catalog_origin_195568.jpg',
+// 		name: 'Перфоратор',
+// 		price: 3000,
+// 	},
+// 	{
+// 		id: 3,
+// 		img: 'https://static.dnipro-m.ua/cache/products/2023/catalog_origin_200763.jpg',
+// 		name: 'Рівень',
+// 		price: 2000,
+// 	},
+// ];
+
 // const basket = [];
+// const favorites = [];
 // const list = document.querySelector('.list');
+// const markup = instruments
+// 	.map(
+// 		({ id, img, name, price }) => `<li data-id="${id}"class="list__item">
+// 				<img src="${img}" alt="${name}" class="list__item-img" width="300">
+// 				<h2 class="list__item-title">${name}</h2>
+// 				<p class="list__item-descr">${price}</p>
+// 				<div class="btn-container">
+// 					<button class="js-add">Buy</button>
+// 					<button class="js-favorite">Favorite</button>
+// 					<button class="js-delete" disabled>Delete</button>
+// 				</div>
+// 			</li>`
+// 	)
+// 	.join('');
+// list.insertAdjacentHTML('beforeend', markup);
+
+// list.addEventListener('click', OnClickBtn);
+
+// function OnClickBtn(evt) {
+// 	// console.log(evt.target);
+// 	// console.log(evt.currentTarget);
+// 	const currentIdx = Number(evt.target.closest('.list__item').dataset.id);
+// 	if (evt.target.classList.contains('js-add')) {
+// 		const currentProduct = {
+// 			...instruments.find(({ id }) => id === currentIdx),
+// 		};
+// 		const inBasket = basket.find(({ id }) => id === currentIdx);
+// 		if (!inBasket) {
+// 			currentProduct.quantity = 1;
+// 			basket.push(currentProduct);
+// 			evt.target.parentElement.lastElementChild.removeAttribute(
+// 				'disabled'
+// 			);
+// 		} else {
+// 			inBasket.quantity += 1;
+// 		}
+
+// 		console.log(basket);
+// 		// console.log(instruments);
+// 	}
+
+// 	if (evt.target.classList.contains('js-favorite')) {
+// 		// const currentIdx = Number(evt.target.closest('.list__item').dataset.id);
+
+// 		const currentProduct = {
+// 			...instruments.find(({ id }) => id === currentIdx),
+// 		};
+// 		const inFavorites = favorites.find(({ id }) => id === currentIdx);
+// 		if (!inFavorites) {
+// 			favorites.push(currentProduct);
+// 		}
+
+// 		console.log(favorites);
+// 	}
+
+// 	if (evt.target.classList.contains('js-delete')) {
+// 		const currentIdx = Number(evt.target.closest('.list__item').dataset.id);
+// 		const idxInBasket = basket.findIndex(({ id }) => id === currentIdx);
+// 		// console.log(idxInBasket);
+// 		// console.log(!~idxInBasket);
+// 		basket.splice(idxInBasket, 1);
+// 		console.log(basket);
+// 		evt.target.setAttribute('disabled', true);
+
+// 		// if (!!~idxInBasket) {
+// 		// 	console.log(evt.target.getAttribute('disabled'));
+// 		// 	evt.target.removeAttribute('disabled');
+// 		// }
+// 	}
+// }
+
+// console.log(markup);
+
 // const markup = instruments.map(({
 //     id,
 //     img,
@@ -185,7 +264,44 @@ const cats = [
 	'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyGk9Ds3bdd4B404EcoMDrVUKnU5u9KABOg&usqp=CAU',
 ];
 
-// const list = document.querySelector('.list')
+const list = document.querySelector('.list');
+const murkup = cats
+	.map(
+		cat =>
+			`<li><img src="${cat}" alt="cat" width="800" loading="lazy"></li>`
+	)
+	.join('');
+list.insertAdjacentHTML('beforeend', murkup);
+
+const ref = {
+	countRef: document.querySelector('.count'),
+};
+ref.countRef.style.position = 'fixed';
+ref.countRef.style.color = 'red';
+ref.countRef.style.fontSize = '40px';
+ref.countRef.style.top = '40px';
+ref.countRef.style.right = '40px';
+const countInnerEl = ref.countRef.firstElementChild;
+// document.addEventListener('scroll', _.throttle(onScroll, 1000));
+// let count = 0;
+// function onScroll() {
+// 	count += 1;
+// 	countInnerEl.textContent = count;
+// }
+
+document.addEventListener(
+	'scroll',
+	_.debounce(onScroll, 1000, {
+		trailing: true, // Параметр! В конце события-----------------------------------
+		leading: true, // Параметр! В начале события-----------------------------------
+	})
+);
+let count = 0;
+function onScroll() {
+	count += 1;
+	countInnerEl.textContent = count;
+}
+
 // const markup = cats.map(item => `<li><img src="${item}" alt="cat" width="300px">  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cumque quos, necessitatibus provident id perspiciatis dolor omnis dignissimos minus aspernatur magnam incidunt corrupti fugiat quo maiores quia suscipit nihil facere.
 // Possimus at quod vero eveniet soluta odio enim harum magni, temporibus blanditiis voluptatum aliquid tempora. Excepturi quo quos ratione, eveniet impedit quasi nostrum quia error modi optio illo vel dolorum?
 // Doloremque ut dolor ipsum non illo quibusdam corporis vitae magni eveniet iure. Quia reiciendis sunt dolore delectus quo numquam, ipsa at architecto. Quasi incidunt eum reiciendis tenetur voluptatum sequi cupiditate!
