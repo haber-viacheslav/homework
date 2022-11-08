@@ -106,61 +106,67 @@
 // console.log('parsedData', parsedData);
 
 // Feedback --------------------------------------------------
-import 'modern-normalize/modern-normalize.css';
-import throttle from 'lodash.throttle';
-import '../css/common.css';
-import '../css/feedback-form.css';
-import { functions } from 'lodash';
+// import 'modern-normalize/modern-normalize.css';
+// import throttle from 'lodash.throttle';
+// import '../css/common.css';
+// import '../css/feedback-form.css';
+// // import { functions } from 'lodash';
 
-const STORAGE_KEY = 'feedback-msg';
+// const STORAGE_KEY = 'feedback-msg';
 
-const refs = {
-	form: document.querySelector('.js-feedback-form'),
-	textarea: document.querySelector('.js-feedback-form  textarea'),
-};
+// const refs = {
+// 	form: document.querySelector('.js-feedback-form'),
+// 	textarea: document.querySelector('.js-feedback-form  textarea'),
+// };
 
-refs.form.addEventListener('submit', onFormSubmit);
-refs.textarea.addEventListener('input', throttle(onTextareaInput, 200));
+// refs.form.addEventListener('submit', onFormSubmit);
+// refs.textarea.addEventListener('input', throttle(onTextareaInput, 200));
 
 // populateTextarea();
 
-/*
- * - Останавливаем поведение по умолчанию
- * - Убираем сообщение из хранилища
- * - Очищаем форму
- */
+// /*
+//  * - Останавливаем поведение по умолчанию
+//  * - Убираем сообщение из хранилища
+//  * - Очищаем форму
+//  */
 
-function onFormSubmit() {}
+// function onFormSubmit(e) {
+// 	e.preventDefault();
 
-// function onFormSubmit(evt) {
-// 	evt.preventDefault();
-
-// 	console.log('Отправляем форму');
-// 	evt.currentTarget.reset();
+// 	console.log('Send form');
+// 	e.currentTarget.reset();
 // 	localStorage.removeItem(STORAGE_KEY);
 // }
 
-/*
- * - Получаем значение поля
- * - Сохраняем его в хранилище
- * - Можно добавить throttle
- */
+// // function onFormSubmit(evt) {
+// // 	evt.preventDefault();
 
-function onTextareaInput(e) {
-	const value = e.currentTarget.value;
+// // 	console.log('Отправляем форму');
+// // 	evt.currentTarget.reset();
+// // 	localStorage.removeItem(STORAGE_KEY);
+// // }
 
-	console.log(value);
-}
-// function onTextareaInput(evt) {
-// 	const message = evt.target.value;
+// /*
+//  * - Получаем значение поля
+//  * - Сохраняем его в хранилище
+//  * - Можно добавить throttle
+//  */
 
-// 	localStorage.setItem(STORAGE_KEY, message);
+// function onTextareaInput(e) {
+// 	const value = e.target.value;
+
+// 	localStorage.setItem(STORAGE_KEY, value);
 // }
+// // function onTextareaInput(evt) {
+// // 	const message = evt.target.value;
 
-/*
- * - Получаем значение из хранилища
- * - Если там что-то было, обновляем DOM
- */
+// // 	localStorage.setItem(STORAGE_KEY, message);
+// // }
+
+// /*
+//  * - Получаем значение из хранилища
+//  * - Если там что-то было, обновляем DOM
+//  */
 // function populateTextarea() {
 // 	const savedMessage = localStorage.getItem(STORAGE_KEY);
 
@@ -168,6 +174,68 @@ function onTextareaInput(e) {
 // 		refs.textarea.value = savedMessage;
 // 	}
 // }
+
+// Color picker -----------------------------------------
+
+import colorCardTpl from '../templates/color-card.hbs';
+
+const colors = [
+	{ hex: '#f44336', rgb: '244,67,54' },
+	{ hex: '#e91e63', rgb: '233,30,99' },
+	{ hex: '#9c27b0', rgb: '156,39,176' },
+	{ hex: '#673ab7', rgb: '103,58,183' },
+	{ hex: '#3f51b5', rgb: '63,81,181' },
+	{ hex: '#2196f3', rgb: '33,150,243' },
+	{ hex: '#00bcd4', rgb: '0,188,212' },
+	{ hex: '#009688', rgb: '0,150,136' },
+	{ hex: '#4caf50', rgb: '76,175,80' },
+	{ hex: '#ffeb3b', rgb: '255,235,59' },
+	{ hex: '#ff9800', rgb: '255,152,0' },
+	{ hex: '#795548', rgb: '121,85,72' },
+	{ hex: '#607d8b', rgb: '96,125,139' },
+];
+// console.log(colorCardTpl(colors[0]));
+const paletteContainer = document.querySelector('.js-palette');
+const cardsMarkup = createColorCardsMarkup(colors);
+
+paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup);
+
+paletteContainer.addEventListener('click', onPaletteContainerClick);
+
+function createColorCardsMarkup(colors) {
+	return colors.map(colorCardTpl).join('');
+}
+
+function onPaletteContainerClick(evt) {
+	const isColorSwatchEl = evt.target.classList.contains('color-swatch');
+
+	if (!isColorSwatchEl) {
+		return;
+	}
+
+	const swatchEl = evt.target;
+	const parentColorCard = swatchEl.closest('.color-card');
+
+	removeActiveCardClass();
+	addActiveCardClass(parentColorCard);
+	setBodyBgColor(swatchEl.dataset.hex);
+}
+
+function setBodyBgColor(color) {
+	document.body.style.backgroundColor = color;
+}
+
+function removeActiveCardClass() {
+	const currentActiveCard = document.querySelector('.color-card.is-active');
+
+	if (currentActiveCard) {
+		currentActiveCard.classList.remove('is-active');
+	}
+}
+
+function addActiveCardClass(card) {
+	card.classList.add('is-active');
+}
 
 // // Sibebar------------------------------------------------
 // import '../css/common.css';

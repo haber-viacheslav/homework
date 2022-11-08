@@ -302,7 +302,8 @@
 // 	countInnerEl.textContent = count;
 // }
 
-// const markup = cats.map(item => `<li><img src="${item}" alt="cat" width="300px">  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cumque quos, necessitatibus provident id perspiciatis dolor omnis dignissimos minus aspernatur magnam incidunt corrupti fugiat quo maiores quia suscipit nihil facere.
+// const markup = cats.map(item => `<li><img src="${item}" alt="cat" width="300px">  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cumque quos,
+// necessitatibus provident id perspiciatis dolor omnis dignissimos minus aspernatur magnam incidunt corrupti fugiat quo maiores quia suscipit nihil facere.
 // Possimus at quod vero eveniet soluta odio enim harum magni, temporibus blanditiis voluptatum aliquid tempora. Excepturi quo quos ratione, eveniet impedit quasi nostrum quia error modi optio illo vel dolorum?
 // Doloremque ut dolor ipsum non illo quibusdam corporis vitae magni eveniet iure. Quia reiciendis sunt dolore delectus quo numquam, ipsa at architecto. Quasi incidunt eum reiciendis tenetur voluptatum sequi cupiditate!
 // Reiciendis vitae aut quibusdam obcaecati consequuntur in aliquam magni molestias deleniti ipsam non laboriosam odio magnam nesciunt, iure fugit est possimus sit porro nobis? Corrupti nostrum nam cumque dolore tempore!
@@ -384,3 +385,82 @@
 // listEl.append(...listElements);
 // console.log(listEl);
 // divEl.append(listEl);
+
+var debounce = require('lodash.debounce');
+const allStudents = [
+	'Jayne Kuyper',
+	'Tiesha Laine',
+	'Lupe Olague',
+	'Clarita Bellman',
+	'Laura Munden',
+	'Bertram Calvi',
+	'Georgianna Sparr',
+	'Carolann Seller',
+	'Felicia Midgette',
+	'Kasandra Bezio',
+	'Elias Vanwyk',
+	'Yu Mccool',
+	'Kati Golub',
+	'Pat Dalley',
+	'Loreta Francis',
+	'Beatris Larusso',
+	'Corrin Vancleve',
+	'Sofia Ressler',
+	'Erlene Burke',
+	'Breann Sande',
+	'Samatha Sao',
+	'Henry Say',
+	'Monnie Bernhard',
+	'Dia Culbert',
+	'Sunny Disandro',
+	'Mack Sen',
+	'Jeremiah Astle',
+	'Misha Ono',
+	'Silas Aubry',
+	'Kenya Longmore',
+	'Mirta Brandenberger',
+	'Eneida Overholt',
+	'Marcelo Popejoy',
+	'Serafina Irvin',
+	'Leroy Tacey',
+	'Brice Hedrick',
+	'Elana Hoops',
+	'Keena London',
+	'Enriqueta Hein',
+	'Valeria Turnbull',
+	'Earlean Canchola',
+	'Corinna Tousignant',
+	'Sherry Rivera',
+	'Chasity Janda',
+	'Tamela Barlow',
+	'Leandro Lonergan',
+	'Karlene Breunig',
+	'Winter Endicott',
+	'Salena Nail',
+	'Tanner Clapper',
+];
+
+const search = document.querySelector('.search-box');
+const students = document.querySelector('.student-list');
+
+search.addEventListener('input', debounce(onSearch, 300));
+
+addMarkup(allStudents);
+
+function addMarkup(data) {
+	const searchData = data
+		.map(item => `<li class="student-list__item">${item}</li>`)
+		.join('');
+	students.innerHTML = searchData;
+}
+
+function onSearch(e) {
+	const inputNormalizeValue = e.target.value.toLowerCase();
+	const searchArr = allStudents.filter(value => {
+		return value.toLowerCase().includes(inputNormalizeValue);
+	});
+	const result = searchArr
+		.map(item => `<li class="student-list__item">${item}</li>`)
+		.join('');
+	students.innerHTML = result;
+}
