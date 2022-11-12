@@ -52,7 +52,7 @@ const refs = {
 // console.log(refs.clockFace);
 const timer = {
 
-	isActive: false,
+	isActive: true,
 	intId: null,
 	start () {
 		const startTime = Date.now();
@@ -62,13 +62,12 @@ const timer = {
 			const resultTime = currentTime - startTime;
 			const { hours, mins, secs } = getTimeComponents(resultTime)
 			refs.clockFace.textContent = `${hours}:${mins}:${secs}`
-			this.isActive = true;
 			if(this.isActive) {
-				console.log(refs.startBtn.getAttribute('disabled'));
+				// console.log(refs.startBtn.getAttribute('disabled'));
 				
 				refs.startBtn.setAttribute('disabled', true)
 
-				console.log(refs.startBtn.getAttribute('disabled'));
+				// console.log(refs.startBtn.getAttribute('disabled'));
 			}
 			// console.log('start -> current time', currentTime - startTime);
 			
