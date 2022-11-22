@@ -83,6 +83,8 @@ const timer = {
 }
 refs.startBtn.addEventListener('click', () => {timer.start()});
 refs.stopBtn.addEventListener('click', () => {timer.stop()})
+
+
 function pad (value) {
 	return String(value).padStart(2, "0");
 }
