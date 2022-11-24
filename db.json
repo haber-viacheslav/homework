@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "title": "На берегу спокойных вод",
+      "title": "На берегу ,буйных вод",
       "author": "Роберт Шекли",
       "genres": [
         "фантастика"
@@ -48,10 +48,11 @@
     },
     {
       "id": 6,
-      "title": "Сон смешного человека",
+      "title": "React",
       "author": "Федор Достоевский",
       "genres": [
-        "классика"
+        "JS",
+        "React"
       ],
       "rating": 7.75
     },
@@ -126,90 +127,6 @@
       ],
       "rating": 7,
       "id": 19
-    },
-    {
-      "title": "Тестовая книга по CSS",
-      "author": "Я",
-      "genres": [
-        "CSS"
-      ],
-      "rating": 9,
-      "id": 20
-    },
-    {
-      "title": "Тестовая книга по CSS",
-      "author": "Я",
-      "genres": [
-        "CSS"
-      ],
-      "rating": 9,
-      "id": 21
-    },
-    {
-      "title": "Java Script",
-      "author": "Дэвид Флэнаган",
-      "genres": [
-        "JS"
-      ],
-      "rating": 9.3,
-      "id": 22
-    },
-    {
-      "id": 23
-    },
-    {
-      "id": 24
-    },
-    {
-      "id": 25
-    },
-    {
-      "id": 26
-    },
-    {
-      "id": 27
-    },
-    {
-      "id": 28
-    },
-    {
-      "title": "Java Script",
-      "author": "Дэвид Флэнаган",
-      "genres": [
-        "JS"
-      ],
-      "rating": 9.3,
-      "id": 29
-    },
-    {
-      "title": "Java Script and CSS",
-      "author": "Дэвид Флэнаган",
-      "genres": [
-        "JS",
-        "CSS"
-      ],
-      "rating": 9.3,
-      "id": 30
-    },
-    {
-      "title": "Java Script and CSS",
-      "author": "Дэвид Флэнаган",
-      "genres": [
-        "JS",
-        "CSS"
-      ],
-      "rating": 9.3,
-      "id": 31
-    },
-    {
-      "title": "Java Script and CSS",
-      "author": "Дэвид Флэнаган",
-      "genres": [
-        "JS",
-        "CSS"
-      ],
-      "rating": 9.3,
-      "id": 32
     }
   ]
 }
