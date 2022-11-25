@@ -57,36 +57,36 @@
 //try - catch
 // GET это просто fetch
 
-function getFruit(name) {
-	const fruits = {
-		strawberry: '🍓',
-		kiwi: '🥝 ',
-		apple: '🍎',
-	};
+// function getFruit(name) {
+// 	const fruits = {
+// 		strawberry: '🍓',
+// 		kiwi: '🥝 ',
+// 		apple: '🍎',
+// 	};
 
-	return new Promise((resolve, reject) =>
-		setTimeout(() => resolve(fruits[name]), 500)
-	);
-}
+// 	return new Promise((resolve, reject) =>
+// 		setTimeout(() => resolve(fruits[name]), 500)
+// 	);
+// }
 
-async function aMakeSmoothie() {
-	try {
-		console.time('aMakeSmoothie');
-		const apple = getFruit('apple');
-		const kiwi = getFruit('kiwi');
-		const berry = getFruit('strawberry');
+// async function aMakeSmoothie() {
+// 	try {
+// 		console.time('aMakeSmoothie');
+// 		const apple = getFruit('apple');
+// 		const kiwi = getFruit('kiwi');
+// 		const berry = getFruit('strawberry');
 
-		const fruits = await Promise.all([apple, kiwi, berry]);
-		console.log(fruits);
-		console.timeEnd('aMakeSmoothie');
+// 		const fruits = await Promise.all([apple, kiwi, berry]);
+// 		// console.log(fruits);
+// 		console.timeEnd('aMakeSmoothie');
 
-		return fruits;
-	} catch (error) {
-		console.log('Ошибка');
-	}
-}
+// 		return fruits;
+// 	} catch (error) {
+// 		console.log('Ошибка');
+// 	}
+// }
 
-aMakeSmoothie();
+// aMakeSmoothie().then(console.log);
 
 // async function fn () {}
 
@@ -104,20 +104,18 @@ aMakeSmoothie();
 
 const BASE_URL = 'http://localhost:3000';
 
-// function fetchBooks() {
-// 	return fetch(`${BASE_URL}/books`).then(response => response.json());
+// async function fetchBooks() {
+// 	const books = (await fetch(`${BASE_URL}/books`)).json();
+// 	return books;
 // }
 
-// console.log(fetchBooks().then(result => result));
-
-// function fetchBookById(bookId) {
-// 	return fetch(`${BASE_URL}/books/${bookId}`)
-// 		.then(response => response.json())
-// 		.then(console.log);
+// async function fetchBookById(bookId) {
+// 	const book = (await fetch(`${BASE_URL}/books/${bookId}`)).json();
+// 	return book;
 // }
 
-// fetchBooks();
-// fetchBookById(3);
+// fetchBooks().then(console.log);
+// fetchBookById(4).then(console.log);
 
 // POST
 
@@ -128,7 +126,7 @@ const BASE_URL = 'http://localhost:3000';
 // 	rating: 9.3,
 // };
 
-// function createBook(book) {
+// async function createBook(book) {
 // 	const options = {
 // 		method: 'POST',
 // 		headers: {
@@ -137,55 +135,54 @@ const BASE_URL = 'http://localhost:3000';
 // 		body: JSON.stringify(book),
 // 	};
 
-// 	return fetch(`${BASE_URL}/books`, options).then(response =>
-// 		response.json()
-// 	);
+// 	return (await fetch(`${BASE_URL}/books`, options)).json();
 // }
 
-// createBook(newBook).then(renderBook);
-
-// function renderBook(book) {
-// 	console.log('Пришёл ответ! будем рисовать разметку');
-// 	console.log(book);
+// async function renderBook(book) {
+// 	try {
+// 		await createBook(newBook).then(console.log);
+// 		console.log('Пришёл ответ! будем рисовать разметку');
+// 		console.log(book);
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
 // }
 
+// renderBook();
 // PATCH
 
-// const newCnangeInBook = {
-// 	title: 'React',
-// 	genres: ['JS', 'React'],
-// };
+const newCnangeInBook = {
+	title: 'React',
+	genres: ['JS', 'React'],
+};
 
-// function changeBook(book, id) {
-// 	const options = {
-// 		method: 'PATCH',
-// 		headers: {
-// 			'Content-Type': 'application/json',
-// 		},
-// 		body: JSON.stringify(book),
-// 	};
+async function changeBook(book, id) {
+	const options = {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(book),
+	};
 
-// 	return fetch(`${BASE_URL}/books/${id}`, options).then(response =>
-// 		response.json()
-// 	);
-// }
+	return (await fetch(`${BASE_URL}/books/${id}`, options)).json();
+}
 
-// changeBook(newCnangeInBook, 6)
-// 	.then(console.log)
-// 	.catch(error => console.error(error));
+changeBook(newCnangeInBook, 6)
+	.then(console.log)
+	.catch(error => console.error(error));
 
 // DELETE
 
-// function deleteBookById(bookId) {
-// 	const options = {
-// 		method: 'DELETE',
-// 	};
-// 	return fetch(`${BASE_URL}/books/${bookId}`, options).then(response =>
-// 		response.json()
-// 	);
-// }
+async function deleteBookById(bookId) {
+	const options = {
+		method: 'DELETE',
+	};
+	const response = await fetch(`${BASE_URL}/books/${bookId}`, options);
+	return response;
+}
 
-// // console.log(dataBaseLength());
+// console.log(dataBaseLength());
 
-// deleteBookById(21);
-// deleteBookById(22);
+deleteBookById(23);
+deleteBookById(24);
