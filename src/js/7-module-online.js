@@ -386,81 +386,81 @@
 // console.log(listEl);
 // divEl.append(listEl);
 
-var debounce = require('lodash.debounce');
-const allStudents = [
-	'Jayne Kuyper',
-	'Tiesha Laine',
-	'Lupe Olague',
-	'Clarita Bellman',
-	'Laura Munden',
-	'Bertram Calvi',
-	'Georgianna Sparr',
-	'Carolann Seller',
-	'Felicia Midgette',
-	'Kasandra Bezio',
-	'Elias Vanwyk',
-	'Yu Mccool',
-	'Kati Golub',
-	'Pat Dalley',
-	'Loreta Francis',
-	'Beatris Larusso',
-	'Corrin Vancleve',
-	'Sofia Ressler',
-	'Erlene Burke',
-	'Breann Sande',
-	'Samatha Sao',
-	'Henry Say',
-	'Monnie Bernhard',
-	'Dia Culbert',
-	'Sunny Disandro',
-	'Mack Sen',
-	'Jeremiah Astle',
-	'Misha Ono',
-	'Silas Aubry',
-	'Kenya Longmore',
-	'Mirta Brandenberger',
-	'Eneida Overholt',
-	'Marcelo Popejoy',
-	'Serafina Irvin',
-	'Leroy Tacey',
-	'Brice Hedrick',
-	'Elana Hoops',
-	'Keena London',
-	'Enriqueta Hein',
-	'Valeria Turnbull',
-	'Earlean Canchola',
-	'Corinna Tousignant',
-	'Sherry Rivera',
-	'Chasity Janda',
-	'Tamela Barlow',
-	'Leandro Lonergan',
-	'Karlene Breunig',
-	'Winter Endicott',
-	'Salena Nail',
-	'Tanner Clapper',
-];
+// var debounce = require('lodash.debounce');
+// const allStudents = [
+// 	'Jayne Kuyper',
+// 	'Tiesha Laine',
+// 	'Lupe Olague',
+// 	'Clarita Bellman',
+// 	'Laura Munden',
+// 	'Bertram Calvi',
+// 	'Georgianna Sparr',
+// 	'Carolann Seller',
+// 	'Felicia Midgette',
+// 	'Kasandra Bezio',
+// 	'Elias Vanwyk',
+// 	'Yu Mccool',
+// 	'Kati Golub',
+// 	'Pat Dalley',
+// 	'Loreta Francis',
+// 	'Beatris Larusso',
+// 	'Corrin Vancleve',
+// 	'Sofia Ressler',
+// 	'Erlene Burke',
+// 	'Breann Sande',
+// 	'Samatha Sao',
+// 	'Henry Say',
+// 	'Monnie Bernhard',
+// 	'Dia Culbert',
+// 	'Sunny Disandro',
+// 	'Mack Sen',
+// 	'Jeremiah Astle',
+// 	'Misha Ono',
+// 	'Silas Aubry',
+// 	'Kenya Longmore',
+// 	'Mirta Brandenberger',
+// 	'Eneida Overholt',
+// 	'Marcelo Popejoy',
+// 	'Serafina Irvin',
+// 	'Leroy Tacey',
+// 	'Brice Hedrick',
+// 	'Elana Hoops',
+// 	'Keena London',
+// 	'Enriqueta Hein',
+// 	'Valeria Turnbull',
+// 	'Earlean Canchola',
+// 	'Corinna Tousignant',
+// 	'Sherry Rivera',
+// 	'Chasity Janda',
+// 	'Tamela Barlow',
+// 	'Leandro Lonergan',
+// 	'Karlene Breunig',
+// 	'Winter Endicott',
+// 	'Salena Nail',
+// 	'Tanner Clapper',
+// ];
 
-const search = document.querySelector('.search-box');
-const students = document.querySelector('.student-list');
+// const search = document.querySelector('.search-box');
+// const students = document.querySelector('.student-list');
 
-search.addEventListener('input', debounce(onSearch, 300));
+// search.addEventListener('input', debounce(onSearch, 300));
 
-addMarkup(allStudents);
+// addMarkup(allStudents);
 
-function addMarkup(data) {
-	const searchData = data
-		.map(item => `<li class="student-list__item">${item}</li>`)
-		.join('');
-	students.innerHTML = searchData;
-}
+// function addMarkup(data) {
+// 	const searchData = data
+// 		.map(item => `<li class="student-list__item">${item}</li>`)
+// 		.join('');
+// 	students.innerHTML = searchData;
+// }
 
-function onSearch(e) {
-	const inputNormalizeValue = e.target.value.toLowerCase();
-	const searchArr = allStudents.filter(value => {
-		return value.toLowerCase().includes(inputNormalizeValue);
-	});
-	const result = searchArr
-		.map(item => `<li class="student-list__item">${item}</li>`)
-		.join('');
-	students.innerHTML = result;
-}
+// function onSearch(e) {
+// 	const inputNormalizeValue = e.target.value.toLowerCase();
+// 	const searchArr = allStudents.filter(value => {
+// 		return value.toLowerCase().includes(inputNormalizeValue);
+// 	});
+// 	const result = searchArr
+// 		.map(item => `<li class="student-list__item">${item}</li>`)
+// 		.join('');
+// 	students.innerHTML = result;
+// }

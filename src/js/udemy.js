@@ -184,3 +184,11 @@ let decr = 10;
 // const isClosed1 = false;
 
 // console.log(isCheked1 || isClosed1); // запинается на правде, и возвращает значение
+
+function doubleChar(str) {
+	for (let i = 0; i < str.length; i++) {
+		console.log(str[1]);
+	}
+}
+
+doubleChar('stellar');

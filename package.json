@@ -1,41 +1,38 @@
 {
-	"dependencies": {
-		"@babel/preset-env": "^7.19.4",
-		"date-fns": "^2.29.3",
-		"joi": "^17.7.0",
-		"json-server": "^0.17.1",
-		"lodash.debounce": "^4.0.8",
-		"lodash.throttle": "^4.1.1",
-		"modern-normalize": "^1.1.0",
-		"shortid": "^2.2.16"
-	},
-	"name": "homework",
-	"description": "",
-	"version": "1.0.0",
-	"main": "index.js",
-	"scripts": {
-		"start": "parcel src/*.html",
-		"build": "parcel build src/*.html --public-url /homework/",
-		"watch": "json-server --watch db.json --delay 500"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jokercs/homework.git"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/jokercs/homework/issues"
-	},
-	"homepage": "https://github.com/jokercs/homework#readme",
-	"devDependencies": {
-		"@babel/cli": "^7.19.3",
-		"@babel/core": "^7.19.6",
-		"parcel-bundler": "^1.12.5",
-		"parcel-plugin-handlebars-precompile": "^1.0.2",
-		"parcel-plugin-nuke-dist": "^1.0.1",
-		"posthtml-include": "^1.6.2",
-		"sass": "^1.32.8"
-	}
+  "name": "homework",
+  "version": "2.0.0",
+  "description": "",
+  "homepage": "https://haber-viacheslav.github.io/homework",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /homework/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haber-viacheslav/homework.git"
+  },
+  "keywords": [],
+  "author": "Viacheslav Haber <gaberslavik@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haber-viacheslav/homework/issues"
+  },
+  "dependencies": {
+    "axios": "^1.2.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.5",
+    "simplelightbox": "^2.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^5.7.1",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "parcel-transformer-hbs": "^1.0.4",
+    "posthtml-include": "^1.7.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }

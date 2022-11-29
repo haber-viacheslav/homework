@@ -18,7 +18,6 @@
 // 		.join('');
 // }
 
-
 // Comments
 
 // import comments from './comments.json'
@@ -41,73 +40,62 @@
 
 // Timer
 
-const refs = {
-	startBtn: document.querySelector('button[data-action-start]'),
-	stopBtn: document.querySelector('button[data-action-stop]'),
-	clockFace: document.querySelector('.js-clockface'),
-}
+// const refs = {
+// 	startBtn: document.querySelector('button[data-action-start]'),
+// 	stopBtn: document.querySelector('button[data-action-stop]'),
+// 	clockFace: document.querySelector('.js-clockface'),
+// }
 
-// console.log(refs.stopBtn);
-// console.log(refs.startBtn);
-// console.log(refs.clockFace);
-const timer = {
+// // console.log(refs.stopBtn);
+// // console.log(refs.startBtn);
+// // console.log(refs.clockFace);
+// const timer = {
 
-	isActive: true,
-	intId: null,
-	start () {
-		const startTime = Date.now();
-	    
-		    this.intId = setInterval(() => {
-			const currentTime = Date.now();
-			const resultTime = currentTime - startTime;
-			const { hours, mins, secs } = getTimeComponents(resultTime)
-			refs.clockFace.textContent = `${hours}:${mins}:${secs}`
-			if(this.isActive) {
-				// console.log(refs.startBtn.getAttribute('disabled'));
-				
-				refs.startBtn.setAttribute('disabled', true)
+// 	isActive: true,
+// 	intId: null,
+// 	start () {
+// 		const startTime = Date.now();
 
-				// console.log(refs.startBtn.getAttribute('disabled'));
-			}
-			// console.log('start -> current time', currentTime - startTime);
-			
-		}, 1000)
-		
-	},
-	stop() {
-		clearInterval(this.intId);
-		this.isActive = false;
-		refs.startBtn.removeAttribute('disabled')
-	}
-	
-}
-refs.startBtn.addEventListener('click', () => {timer.start()});
-refs.stopBtn.addEventListener('click', () => {timer.stop()})
+// 		    this.intId = setInterval(() => {
+// 			const currentTime = Date.now();
+// 			const resultTime = currentTime - startTime;
+// 			const { hours, mins, secs } = getTimeComponents(resultTime)
+// 			refs.clockFace.textContent = `${hours}:${mins}:${secs}`
+// 			if(this.isActive) {
+// 				// console.log(refs.startBtn.getAttribute('disabled'));
 
+// 				refs.startBtn.setAttribute('disabled', true)
 
-function pad (value) {
-	return String(value).padStart(2, "0");
-}
+// 				// console.log(refs.startBtn.getAttribute('disabled'));
+// 			}
+// 			// console.log('start -> current time', currentTime - startTime);
 
+// 		}, 1000)
 
-function getTimeComponents(time) {
-	    const hours = pad(
-	      Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-	    );
-	    const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-	    const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
-	
-	    return { hours, mins, secs };
-	  }
+// 	},
+// 	stop() {
+// 		clearInterval(this.intId);
+// 		this.isActive = false;
+// 		refs.startBtn.removeAttribute('disabled')
+// 	}
 
+// }
+// refs.startBtn.addEventListener('click', () => {timer.start()});
+// refs.stopBtn.addEventListener('click', () => {timer.stop()})
 
+// function pad (value) {
+// 	return String(value).padStart(2, "0");
+// }
 
+// function getTimeComponents(time) {
+// 	    const hours = pad(
+// 	      Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+// 	    );
+// 	    const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+// 	    const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
 
-
-
-
-
-
+// 	    return { hours, mins, secs };
+// 	  }
 
 // const refs = {
 //   startBtn: document.querySelector('button[data-action-start]'),
