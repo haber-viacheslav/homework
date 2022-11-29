@@ -1,0 +1,2 @@
+const BASE_URL="http://localhost:3000",newCnangeInBook={title:"React",genres:["JS","React"]};async function changeBook(o,e){const n={method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify(o)};return(await fetch(`${BASE_URL}/books/${e}`,n)).json()}async function deleteBookById(o){return await fetch(`${BASE_URL}/books/${o}`,{method:"DELETE"})}changeBook(newCnangeInBook,6).then(console.log).catch((o=>console.error(o))),deleteBookById(23),deleteBookById(24);
+//# sourceMappingURL=async-await-crud.a838da42.js.map
