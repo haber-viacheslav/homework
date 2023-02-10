@@ -1,0 +1,141 @@
+.form__modal {
+	position: relative;
+	padding: 20px;
+	width: 450px;
+	background-color: green;
+	box-shadow: $work-btn-shadow;
+}
+
+.close-btn {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid $prime-white;
+	border-radius: 50%;
+	transition: box-shadow $time-cubic, background-color $time-cubic,
+		border-width $time-cubic 250ms;
+	&:hover,
+	&:focus {
+		box-shadow: $team-member-shadow;
+		background-color: rgba(26, 25, 25, 0.655);
+		border-width: 3px;
+	}
+}
+
+.form__wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.form__group {
+	margin-bottom: 10px;
+	gap: 10px;
+}
+
+.form__label {
+	margin-bottom: 4px;
+	display: block;
+	color: aqua;
+}
+
+.form__input {
+	width: 356px;
+	display: block;
+	padding: 4px 20px;
+	color: blueviolet;
+	background-color: yellow;
+	&::placeholder {
+		color: orangered;
+	}
+}
+
+.form__radio-wrp {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.form__checkbox-wrp {
+	margin-right: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.form__checkbox-label {
+	display: block;
+	padding: 4px;
+}
+
+.form__time {
+	display: block;
+	padding: 8px;
+}
+
+.form__commit {
+	display: block;
+	width: 410px;
+	margin: 0 auto;
+}
+
+.form__commit-text {
+	padding: 10px;
+	resize: none;
+	&::placeholder {
+		color: olivedrab;
+	}
+}
+
+.btn {
+	display: block;
+	margin: 0 auto;
+	min-width: 30px;
+	padding: 6px 20px;
+	border: 1px solid $prime-white;
+	border-radius: 6px;
+
+	text-transform: uppercase;
+}
+
+.form__submit-btn {
+	margin-bottom: 20px;
+	text-align: center;
+	color: orange;
+	background-color: antiquewhite;
+	border-color: blue;
+	box-shadow: 2px 4px 2px aquamarine;
+	transition: border-color $time-cubic, color $time-cub,
+		background-color $time-cubic, box-shadow $time-cub;
+	&:hover,
+	&:focus {
+		box-shadow: 2px 5px 4px $modal-shadow-color;
+		border-color: orangered;
+		background-color: $prime-color;
+		color: $prime-white;
+	}
+}
+
+.form__reset-btn {
+	margin-bottom: 20px;
+	text-align: center;
+	color: red;
+	background-color: antiquewhite;
+	border-color: blue;
+	box-shadow: 2px 4px 2px aquamarine;
+	transition: border-color $time-cubic, color $time-cub,
+		background-color $time-cubic, box-shadow $time-cub;
+	&:hover,
+	&:focus {
+		box-shadow: $team-member-shadow;
+		border-color: orangered;
+		background-color: $grey-text;
+		color: $prime-white;
+	}
+}

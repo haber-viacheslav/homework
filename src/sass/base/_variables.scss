@@ -1,0 +1,68 @@
+/* Fonts */
+
+$main-font: 'Roboto', sans-serif;
+$second-font: 'Raleway', sans-serif;
+
+/* Text color */
+
+$pure-black: #000000;
+$prime-color: #212121;
+$active-color: #2196f3;
+$btn-accent-color: #188ce8;
+$prime-white: #ffffff;
+$grey-text: #757575;
+$place-holder: rgba(117, 117, 117, 0.5);
+$footer-menu: rgba(255, 255, 255, 0.6);
+
+/* Background color */
+
+$prime-bg-color: #2f303a;
+$second-bg-color: #f5f4fa;
+$social-bg-color: rgba(255, 255, 255, 0.1);
+$doing-subtitle-bg-color: rgba(47, 48, 58, 0.8);
+$overlay-bg-color: rgba(33, 150, 243, 0.9);
+$backdrop-bg-color: rgba(0, 0, 0, 0.2);
+$form-input-color: rgba(33, 33, 33, 0.2);
+
+/* Border color */
+
+$header-border-color: #ececec;
+$border-color: #eeeeee;
+$second-border-color: #afb1b8;
+$close-btn-border-color: rgba(0, 0, 0, 0.1);
+$footer-email: rgba(255, 255, 255, 0.3);
+
+/* Cubic time 250ms*/
+$time-cubic: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+$time-cub: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 100ms;
+
+/* Gradient */
+
+$hero-gradient: linear-gradient(
+	to right,
+	rgba(47, 48, 58, 0.4),
+	rgba(47, 48, 58, 0.4)
+);
+
+/* Box-shadows */
+
+$solution-btn-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+$team-member-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+	0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+$work-btn-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+	0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+$work-list-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+	0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+$modal-shadow-color: 0px 1px 3px rgba(0, 0, 0, 0.12),
+	0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+
+$modal-form-btn: 0px 4px 4px rgba(0, 0, 0, 0.3);
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1280px;
