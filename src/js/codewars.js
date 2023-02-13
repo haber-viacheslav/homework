@@ -85,4 +85,73 @@ Input: 145263 Output: 654321
 Input: 123456789 Output: 987654321
  */
 
-function descendingOrder(n) {}
+// function descendingOrder(n) {
+// 	return parseInt(
+// 		n
+// 			.toString()
+// 			.split('')
+// 			.sort((a, b) => b - a)
+// 			.join('')
+// 	);
+// }
+
+// console.log(descendingOrder(1423242));
+
+// function openOrSenior(data) {
+// 	const output = [];
+// 	data.map(sliceData => {
+// 		if (sliceData[0] >= 55 && sliceData[1] > 7) {
+// 			output.push('Senior');
+// 		} else {
+// 			output.push('Open');
+// 		}
+// 	});
+// 	return output;
+// }
+
+// console.log(
+// 	openOrSenior([
+// 		[45, 12],
+// 		[55, 21],
+// 		[19, -2],
+// 		[104, 20],
+// 	])
+// );
+
+// Task:
+// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+
+// Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+// Rules:
+// You need to round the answer to 2 decimal places and return it as String.
+
+// If the given value is 0 then it should return 0.00
+
+// You will only be given Natural Numbers as arguments.
+
+// Examples:(Input --> Output)
+// 1 --> 1 --> "1.00"
+// 2 --> 1 + 1/4 --> "1.25"
+// 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
+
+function SeriesSum(n) {
+	const arr = [];
+	let diff = 4;
+	for (let i = 0; i < n - 1; i += 1) {
+		if (n === 0) {
+			arr.push(1);
+			break;
+		} else if (n > 0) {
+			arr.push(1 / diff);
+			diff += 3;
+		}
+	}
+	console.log(arr);
+
+	result = arr.reduce((acc, value) => {
+		return acc + value;
+	}, 0);
+	return result.toFixed(2);
+}
+
+console.log(SeriesSum(10));
