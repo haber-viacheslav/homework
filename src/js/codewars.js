@@ -243,3 +243,169 @@ Input: 123456789 Output: 987654321
 // }
 
 // console.log(SeriesSum(10));
+
+// camelCase => camel Case
+// function solution(string) {
+// 	const charArray = string.split('');
+// 	const indexes = [];
+// 	let x = 0;
+// 	for (let i = 0; i < charArray.length; i += 1) {
+// 		if (charArray[i] === charArray[i].toUpperCase()) {
+// 			indexes.push(i);
+// 		}
+// 	}
+// 	if (indexes.length && string) {
+// 		for (const index of indexes) {
+// 			charArray.splice(index + x, 0, ' ');
+// 			x += 1;
+// 		}
+// 		return charArray.join('');
+// 	}
+// 	return string;
+// }
+// function solution1(text) {
+// 	return text.split(/(?=[A-Z])/).join(' ');
+// }
+// function solution2(string) {
+// 	return string.replace(/([A-Z])/g, ' $1');
+// }
+
+// console.log(solution('djCabgTahGtt'));
+// console.log(solution1('djCabgTahGtt'));
+// console.log(solution2('djCabgTahGtt'));
+
+// console.log(solution(''));
+// console.log(solution1(''));
+// console.log(solution2(''));
+
+// console.log(solution('djahtt'));
+// console.log(solution1('djahtt'));
+// console.log(solution2('djahtt'));
+// Return the number (count) of vowels in the given string.
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+// The input string will only consist of lower case letters and/or spaces.
+// function getCount(str) {
+// 	let count = 0;
+// 	const vowels = ['a', 'e', 'o', 'i', 'u'];
+// 	const chars = str.split('');
+// 	for (const char of chars) {
+// 		if (vowels.includes(char)) {
+// 			count += 1;
+// 		}
+// 	}
+// 	return count;
+// }
+
+// function getCount(str) {
+// 	return (str.match(/[aeiou]/gi) || []).length;
+// }
+// console.log(getCount('sot sar'));
+
+// function getCount(str) {
+// 	return str.split('').filter(c => 'aeiouAEIOU'.includes(c)).length;
+// }
+
+// function getCount(str) {
+// 	return str.replace(/[^aeiou]/gi, '').length;
+// }
+
+// function bouncingBall(h, bounce, window) {
+// 	if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
+// 		return -1;
+// 	}
+// 	let counter = 1;
+// 	let currentHeight = h;
+// 	while (currentHeight * bounce > window) {
+// 		counter += 2;
+// 		currentHeight *= bounce;
+// 	}
+// 	return counter;
+// }
+
+// console.log(bouncingBall(30, 0.66, 1.5));
+
+// function towerBuilder(nFloors) {
+// 	const resultArray = [];
+// 	let resultString = '';
+// 	for (let i = 0; i <= nFloors; i += 1) {
+// 		for (let j = 0; j < nFloors - 1; j += 1) {
+// 			resultString += ' ';
+// 		}
+// 		for (let k = 0; k < 2 * i + 1; k++) {
+// 			resultString += '*';
+// 		}
+
+// 		resultArray.push(resultString);
+// 		resultString = '';
+// 	}
+// 	return resultArray;
+// }
+// function towerBuilder(nFloors) {
+// 	const tower = [];
+
+// 	for (let floor = 1; floor <= nFloors; floor++) {
+// 		const spaces = ' '.repeat(nFloors - floor);
+
+// 		const asterisks = '*'.repeat(2 * floor - 1);
+
+// 		tower.push(`${spaces}${asterisks}${spaces}`);
+// 	}
+
+// 	return tower;
+// }
+// console.log(towerBuilder(6));
+
+// function towerBuilder(nFloors, nBlockSz) {
+// 	const tower = [];
+
+// 	for (let floor = 1; floor <= nFloors; floor++) {
+// 		const spaces = ' '.repeat(nFloors - floor);
+
+// 		const asterisks = '*'.repeat(2 * floor - 1).repeat(nBlockSz);
+
+// 		tower.push(`${spaces}${asterisks}${spaces}`);
+// 	}
+
+// 	return tower;
+// }
+// console.log(towerBuilder(3, 1));
+// const lines = 5;
+// let result = '';
+
+// for (let i = 0; i <= lines; i++) {
+// 	for (let j = 0; j < lines - i; j++) {
+// 		result += ' ';
+// 	}
+// 	for (let j = 0; j < 2 * i + 1; j++) {
+// 		result += '*';
+// 	}
+// 	result += '\n';
+// }
+
+// console.log(result);
+
+// function towerBuilder(floors, blockSize) {
+// 	const [width, height] = blockSize;
+// 	const tower = [];
+
+// 	for (let floor = 1; floor <= floors; floor++) {
+// 		const spaces = ' '.repeat((floors - floor) * width);
+// 		const blocks = '*'.repeat(2 * floor * width - width);
+
+// 		for (let row = 0; row < height; row++) {
+// 			const line = spaces + blocks + spaces;
+// 			tower.push(line);
+// 		}
+// 	}
+
+// 	return tower;
+// }
+// console.log(buildTowerAdvanced(3, [4, 2]));
+
+function sortArray(array) {
+	const indexes = [];
+}
+
+console.log(sortArray([[5, 3, 2, 8, 1, 4]]));
