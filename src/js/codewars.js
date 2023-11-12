@@ -408,4 +408,4 @@ function sortArray(array) {
 	const indexes = [];
 }
 
-console.log(sortArray([[5, 3, 2, 8, 1, 4]]));
+console.log(sortArray([5, 3, 2, 8, 1, 4]));
